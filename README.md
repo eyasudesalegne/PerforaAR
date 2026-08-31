@@ -1,5 +1,7 @@
 # PerforaAR
 
+[![CI](https://github.com/eyasudesalegne/PerforaAR/actions/workflows/ci.yml/badge.svg)](https://github.com/eyasudesalegne/PerforaAR/actions/workflows/ci.yml)
+
 **PerforaAR** is an open research prototype for non-invasive three-dimensional perforator mapping and augmented-reality guidance in anterolateral thigh (ALT) flap planning.
 
 The project turns spatially tracked Doppler observations into a fused, ranked map of candidate perforators, then provides the geometry needed to align that map with a camera view. The first public milestone deliberately uses synthetic data so the software can be tested without exposing personal or clinical data.
