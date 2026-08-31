@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use PerforaAR, please cite this software."
+title: "PerforaAR"
+type: software
+version: 0.1.0
+date-released: 2026-09-01
+authors:
+  - family-names: "Beyene"
+    given-names: "Eyasu Desalegne"
+repository-code: "https://github.com/eyasudesalegne/PerforaAR"
+license: Apache-2.0
+abstract: >-
+  An open research prototype for tracked Doppler perforator mapping,
+  explainable candidate ranking, and augmented-reality registration.
+

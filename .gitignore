@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.streamlit/secrets.toml
+outputs/
+data/private/
+data/raw/
+*.dcm
+*.nii
+*.nii.gz
+*.mp4
+.DS_Store
+

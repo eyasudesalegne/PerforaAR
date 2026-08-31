@@ -1,0 +1,36 @@
+name: Engineering task
+description: A measurable implementation or verification task
+title: "[Engineering]: "
+labels: ["engineering"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: State the current limitation and evidence.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Include units, datasets, thresholds, and failure behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Verification plan
+      description: Explain how the result will be reproduced.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety and data
+      options:
+        - label: No identifiable or restricted data will be committed.
+          required: true
+        - label: Medical/research limitations will remain explicit.
+          required: true
+

@@ -1,0 +1,18 @@
+fusion:
+  radius_mm: 5.0
+ranking:
+  weights:
+    diameter: 0.30
+    shallow_depth: 0.20
+    flow: 0.25
+    confidence: 0.25
+  missing_value_policy: reject
+coordinate_system:
+  name: thigh_surface
+  units: mm
+  axes:
+    x: medial_to_lateral
+    y: distal_to_proximal
+    z: surface_to_deep
+random_seed: 42
+

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PerforaAR tracked detection row",
+  "type": "object",
+  "required": ["detection_id", "x_mm", "y_mm", "z_mm", "diameter_mm", "flow_score", "confidence"],
+  "properties": {
+    "detection_id": {"type": "string"},
+    "x_mm": {"type": "number", "description": "Medial-to-lateral coordinate"},
+    "y_mm": {"type": "number", "description": "Distal-to-proximal coordinate"},
+    "z_mm": {"type": "number", "minimum": 0, "description": "Depth below reference surface"},
+    "diameter_mm": {"type": "number", "exclusiveMinimum": 0},
+    "flow_score": {"type": "number", "minimum": 0, "maximum": 1},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "frame_id": {"type": "string"},
+    "timestamp_s": {"type": "number", "minimum": 0}
+  },
+  "additionalProperties": true
+}
+
