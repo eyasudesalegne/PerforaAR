@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/eyasudesalegne/PerforaAR/data/schema/tracked-frame.schema.json",
+  "title": "PerforaAR synchronized tracked Doppler frame",
+  "type": "object",
+  "required": [
+    "session_id",
+    "frame_id",
+    "frame_path",
+    "frame_timestamp_ns",
+    "timestamp_domain",
+    "probe_pose_timestamp_ns",
+    "leg_pose_timestamp_ns",
+    "T_tracker_from_probe",
+    "T_tracker_from_leg",
+    "probe_tracking_state",
+    "leg_tracking_state",
+    "sync_error_ms",
+    "calibration_id",
+    "image_width_px",
+    "image_height_px",
+    "quality_flags",
+    "evidence_label",
+    "accepted_for_reconstruction"
+  ],
+  "properties": {
+    "session_id": {"type": "string", "minLength": 1},
+    "frame_id": {"type": "string", "minLength": 1},
+    "frame_path": {"type": "string", "minLength": 1},
+    "frame_timestamp_ns": {"type": "integer", "minimum": 0},
+    "timestamp_domain": {"const": "session_monotonic_ns"},
+    "probe_pose_timestamp_ns": {"type": "integer", "minimum": 0},
+    "leg_pose_timestamp_ns": {"type": "integer", "minimum": 0},
+    "T_tracker_from_probe": {"$ref": "#/$defs/poseOrNull"},
+    "T_tracker_from_leg": {"$ref": "#/$defs/poseOrNull"},
+    "probe_tracking_state": {"$ref": "#/$defs/trackingState"},
+    "leg_tracking_state": {"$ref": "#/$defs/trackingState"},
+    "sync_error_ms": {"type": "number", "minimum": 0},
+    "calibration_id": {"type": "string", "minLength": 1},
+    "image_width_px": {"type": "integer", "minimum": 1},
+    "image_height_px": {"type": "integer", "minimum": 1},
+    "quality_flags": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "evidence_label": {
+      "enum": ["simulated", "transferred", "phantom-measured", "volunteer-measured"]
+    },
+    "accepted_for_reconstruction": {"type": "boolean"}
+  },
+  "$defs": {
+    "trackingState": {"enum": ["tracked", "interpolated", "lost", "stale"]},
+    "row4": {
+      "type": "array",
+      "items": {"type": "number"},
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "transform4x4": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/row4"},
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "poseOrNull": {
+      "oneOf": [
+        {"$ref": "#/$defs/transform4x4"},
+        {"type": "null"}
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"accepted_for_reconstruction": {"const": true}},
+        "required": ["accepted_for_reconstruction"]
+      },
+      "then": {
+        "properties": {
+          "T_tracker_from_probe": {"$ref": "#/$defs/transform4x4"},
+          "T_tracker_from_leg": {"$ref": "#/$defs/transform4x4"},
+          "probe_tracking_state": {"enum": ["tracked", "interpolated"]},
+          "leg_tracking_state": {"enum": ["tracked", "interpolated"]}
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

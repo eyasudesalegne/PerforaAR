@@ -6,9 +6,11 @@ Synthetic detections, deterministic fusion, transparent ranking, rigid geometry,
 
 ## M1 — calibrated benchtop acquisition
 
-- select accessible commercial Doppler and tracking hardware;
-- implement timestamped capture adapters;
-- calibrate probe image, tracker, and camera frames;
+- select exact devices within the fixed 2D colour-Doppler + optical-tracker architecture;
+- fabricate and verify rigid probe and leg-reference targets;
+- implement timestamped frame capture and simultaneous two-target pose acquisition;
+- calibrate image-to-probe, tracker-to-camera, and leg-reference frames;
+- reject frames with missing targets, stale calibration, or excessive synchronization error;
 - record error budgets and repeatability;
 - establish manual vessel annotation as the reference baseline.
 
@@ -35,5 +37,7 @@ Synthetic detections, deterministic fusion, transparent ranking, rigid geometry,
 
 ## Deferred research
 
-Learned live segmentation, deformable tracking after flap elevation, CTA/MRA fusion, head-mounted intraoperative guidance, and clinical outcome studies are separate work packages requiring appropriate data, approvals, and validation.
-
+Learned live segmentation, sensorless ultrasound reconstruction, true 3D/4D probes,
+deformable tracking after flap elevation, CTA/MRA fusion, head-mounted intraoperative
+guidance, and clinical outcome studies are separate work packages requiring appropriate
+data, approvals, and validation.

@@ -10,7 +10,11 @@ The current users are biomedical-engineering researchers and collaborating recon
 
 ## Intended use of the prototype
 
-PerforaAR records spatially tracked, non-invasive Doppler observations; fuses repeat observations; displays candidate location, estimated depth, and evidence; and supports phantom or healthy-volunteer research under an approved protocol.
+PerforaAR records non-invasive 2D colour-Doppler frames together with synchronized
+optical poses for a rigid probe target and a rigid leg reference. It mathematically
+places calibrated observations in the leg frame, fuses repeat observations, displays
+candidate location, estimated depth, evidence, and uncertainty, and supports phantom or
+healthy-volunteer research under an approved protocol.
 
 ## Explicit exclusions
 
@@ -36,3 +40,6 @@ Each proposition can fail. Results will be reported with uncertainty and without
 
 The TÜSEB B3 deliverable is a software/pre-prototype and validated engineering workflow. Phantom truth supports accuracy testing. Healthy volunteers support non-invasive feasibility and repeatability only. Clinical effectiveness requires a later protocol, medical-device planning, and appropriate approvals.
 
+Evidence is labelled as **simulated**, **transferred**, **phantom-measured**,
+**volunteer-measured**, or **planned**. Results from one category are not used to imply
+that another category has been completed.

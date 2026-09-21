@@ -1,0 +1,25 @@
+architecture:
+  ultrasound_mode: 2d_colour_doppler
+  tracking_mode: optical_dual_target
+  coordinate_convention: T_destination_from_source
+  length_unit: mm
+  require_probe_target: true
+  require_leg_reference: true
+
+synchronization:
+  clock: monotonic
+  max_frame_pose_error_ms: null  # Lock from measured M1 latency experiments.
+  interpolation_enabled: false
+
+calibration:
+  calibration_id: null
+  reject_missing_or_stale: true
+  image_geometry: linear_probe
+
+quality:
+  reject_probe_target_lost: true
+  reject_leg_reference_lost: true
+  reject_non_rigid_transform: true
+  reject_geometry_mismatch: true
+
+evidence_label: simulated

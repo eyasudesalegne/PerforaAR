@@ -1,0 +1,35 @@
+{
+  "calibration_id": "synthetic-cal-001",
+  "created_at": "2026-09-21T00:00:00Z",
+  "coordinate_convention": "T_destination_from_source",
+  "length_unit": "mm",
+  "probe_mount_id": "digital-probe-mount-001",
+  "leg_reference_id": "digital-leg-reference-001",
+  "image_geometry": {
+    "model": "linear_probe",
+    "image_width_px": 640,
+    "image_height_px": 480,
+    "pixel_spacing_mm": [0.1, 0.1],
+    "origin_px": [320.0, 0.0]
+  },
+  "T_probe_from_image": [
+    [1.0, 0.0, 0.0, 0.0],
+    [0.0, 1.0, 0.0, 0.0],
+    [0.0, 0.0, 1.0, 0.0],
+    [0.0, 0.0, 0.0, 1.0]
+  ],
+  "T_camera_from_tracker": [
+    [1.0, 0.0, 0.0, 0.0],
+    [0.0, 1.0, 0.0, 0.0],
+    [0.0, 0.0, 1.0, 0.0],
+    [0.0, 0.0, 0.0, 1.0]
+  ],
+  "probe_calibration_residual_mm": 0.0,
+  "camera_reprojection_residual_px": 0.0,
+  "operator_id": "synthetic-generator",
+  "method": "digital ground-truth fixture",
+  "input_hashes": {
+    "digital_fixture": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "status": "development"
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/eyasudesalegne/PerforaAR/data/schema/calibration.schema.json",
+  "title": "PerforaAR tracked acquisition calibration",
+  "type": "object",
+  "required": [
+    "calibration_id",
+    "created_at",
+    "coordinate_convention",
+    "length_unit",
+    "probe_mount_id",
+    "leg_reference_id",
+    "image_geometry",
+    "T_probe_from_image",
+    "probe_calibration_residual_mm",
+    "status"
+  ],
+  "properties": {
+    "calibration_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "coordinate_convention": {"const": "T_destination_from_source"},
+    "length_unit": {"const": "mm"},
+    "probe_mount_id": {"type": "string", "minLength": 1},
+    "leg_reference_id": {"type": "string", "minLength": 1},
+    "image_geometry": {
+      "type": "object",
+      "required": ["model", "image_width_px", "image_height_px", "pixel_spacing_mm", "origin_px"],
+      "properties": {
+        "model": {"const": "linear_probe"},
+        "image_width_px": {"type": "integer", "minimum": 1},
+        "image_height_px": {"type": "integer", "minimum": 1},
+        "pixel_spacing_mm": {"$ref": "#/$defs/pair"},
+        "origin_px": {"$ref": "#/$defs/pair"}
+      },
+      "additionalProperties": false
+    },
+    "T_probe_from_image": {"$ref": "#/$defs/transform4x4"},
+    "T_camera_from_tracker": {"$ref": "#/$defs/transform4x4"},
+    "probe_calibration_residual_mm": {"type": "number", "minimum": 0},
+    "camera_reprojection_residual_px": {"type": "number", "minimum": 0},
+    "operator_id": {"type": "string"},
+    "method": {"type": "string"},
+    "input_hashes": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"}
+    },
+    "status": {"enum": ["development", "valid", "stale", "revoked"]}
+  },
+  "$defs": {
+    "pair": {
+      "type": "array",
+      "items": {"type": "number"},
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "row4": {
+      "type": "array",
+      "items": {"type": "number"},
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "transform4x4": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/row4"},
+      "minItems": 4,
+      "maxItems": 4
+    }
+  },
+  "additionalProperties": false
+}

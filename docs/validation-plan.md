@@ -14,7 +14,10 @@ Primary measurements:
 
 - camera reprojection error in pixels;
 - probe-to-image calibration residual in millimetres;
-- tracker static jitter and drift;
+- probe-target and leg-reference static jitter and drift;
+- relative probe-to-leg pose error under common rigid motion;
+- target-occlusion detection and invalid-frame rejection;
+- ultrasound-frame-to-pose synchronization error;
 - end-to-end latency and dropped-frame rate;
 - repeated calibration variability across operators and days.
 
@@ -65,5 +68,7 @@ The purpose is to refine the pre-prototype and protocol. The sample is not power
 
 ## Stop conditions
 
-Stop or suppress the overlay when calibration is missing, tracking is lost, latency exceeds the approved limit, uncertainty is not finite, the surface moves outside the validated range, or coordinate-frame consistency checks fail.
-
+Stop or suppress the overlay when calibration is missing, either the probe target or leg
+reference is lost, synchronization or latency exceeds the approved limit, uncertainty is
+not finite, non-rigid surface motion exceeds the validated range, or coordinate-frame
+consistency checks fail.
