@@ -24,15 +24,30 @@ Handheld Doppler is useful but produces isolated observations that must be remem
 
 Real-time Doppler acquisition, learned vessel segmentation, deformable registration, and a surgical AR interface are planned modules and are not represented as complete.
 
+## Selected engineering route
+
+PerforaAR will use a conventional **2D colour-Doppler probe with optical tracking**. A
+rigid target on the probe records each image plane, while a second rigid reference on
+the thigh records subject motion. The reconstruction is mathematical: calibrated vessel
+points from successive frames are transformed into the leg-reference frame and fused.
+AI may later segment vessel pixels, but it does not invent the 3D anatomy.
+
+For each usable frame, the acquisition contract requires:
+
+`Doppler frame + frame timestamp + probe pose + leg-reference pose + calibration ID`
+
+Tracking the probe alone is insufficient when the leg can move. See the
+[tracked acquisition specification](docs/tracked-acquisition-spec.md).
+
 ## System concept
 
 ```mermaid
 flowchart TD
-    A["Tracked Doppler sweep"] --> B["Vessel evidence"]
-    B --> C["3D fusion"]
-    C --> D["Candidate ranking"]
-    D --> E["Patient-to-camera registration"]
-    E --> F["AR planning overlay"]
+    A["2D colour-Doppler frame"] --> B["Vessel pixels in mm"]
+    C["Probe and leg poses"] --> D["Leg-frame transform"]
+    B --> D
+    D --> E["3D fusion and uncertainty"]
+    E --> F["Registered AR planning view"]
 ```
 
 ## Quick start
@@ -60,7 +75,7 @@ python scripts/run_demo.py --input data/sample/synthetic_detections.csv --output
 | `src/perforaar/` | Tested fusion, scoring, geometry, and synthetic-data modules |
 | `app.py` | Interactive research demo |
 | `configs/` | Versioned, human-readable pipeline settings |
-| `data/` | Schema and synthetic sample only |
+| `data/` | Acquisition/calibration schemas and synthetic sample only |
 | `docs/` | Scope, architecture, hardware, data governance, and validation plan |
 | `tests/` | Unit tests for quantitative core functions |
 
@@ -70,7 +85,12 @@ Published studies support investigating AR for perforator mapping, while also sh
 
 ## Intended TÜSEB B3 contribution
 
-The proposed B3 output is a software/pre-prototype demonstrated on synthetic and phantom data, with non-invasive healthy-volunteer feasibility work only after institutional ethics approval. Any clinical study, intraoperative use, or medical-device claim is outside the present milestone.
+The proposed B3 output is a tracked 2D-Doppler engineering pre-prototype demonstrated
+first on synthetic geometry and a vascular phantom. Non-invasive healthy-volunteer
+feasibility begins only after institutional ethics approval. Simulation, transferred
+data, phantom measurements, and participant measurements are reported separately; none
+is presented as clinical validation. Intraoperative use and medical-device claims are
+outside the present milestone.
 
 ## Contributing and citation
 

@@ -1,0 +1,30 @@
+{
+  "session_id": "synthetic-dual-target-001",
+  "frame_id": "frame_000001",
+  "frame_path": "frames/frame_000001.png",
+  "frame_timestamp_ns": 1000000000,
+  "timestamp_domain": "session_monotonic_ns",
+  "probe_pose_timestamp_ns": 1000000000,
+  "leg_pose_timestamp_ns": 1000000000,
+  "T_tracker_from_probe": [
+    [1.0, 0.0, 0.0, 10.0],
+    [0.0, 1.0, 0.0, 0.0],
+    [0.0, 0.0, 1.0, 0.0],
+    [0.0, 0.0, 0.0, 1.0]
+  ],
+  "T_tracker_from_leg": [
+    [1.0, 0.0, 0.0, 3.0],
+    [0.0, 1.0, 0.0, 0.0],
+    [0.0, 0.0, 1.0, 0.0],
+    [0.0, 0.0, 0.0, 1.0]
+  ],
+  "probe_tracking_state": "tracked",
+  "leg_tracking_state": "tracked",
+  "sync_error_ms": 0.0,
+  "calibration_id": "synthetic-cal-001",
+  "image_width_px": 640,
+  "image_height_px": 480,
+  "quality_flags": [],
+  "evidence_label": "simulated",
+  "accepted_for_reconstruction": true
+}
