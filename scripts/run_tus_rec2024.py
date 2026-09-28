@@ -180,15 +180,24 @@ def write_summary(path: Path, metrics: dict) -> None:
         f"- Validation failures: {validations['failed_scans']}",
         f"- Reconstruction conditions run: {len(conditions)}",
         f"- Best non-reference NRMSE: {best['condition']} on {best['scan']} = {best['nrmse']:.4f}",
-        f"- Worst non-reference NRMSE: {worst['condition']} on {worst['scan']} = {worst['nrmse']:.4f}",
+        (
+            f"- Worst non-reference NRMSE: {worst['condition']} on "
+            f"{worst['scan']} = {worst['nrmse']:.4f}"
+        ),
         "",
-        "This run validates the tracked geometric reconstruction pipeline. It does not validate Doppler blood flow or ALT perforator detection because those labels/modalities are not present in TUS-REC2024.",
+        (
+            "This run validates the tracked geometric reconstruction pipeline. It does not "
+            "validate Doppler blood flow or ALT perforator detection because those "
+            "labels/modalities are not present in TUS-REC2024."
+        ),
     ]
     path.write_text("\n".join(text) + "\n")
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run the TUS-REC2024 tracked reconstruction pilot.")
+    parser = argparse.ArgumentParser(
+        description="Run the TUS-REC2024 tracked reconstruction pilot."
+    )
     parser.add_argument("--root", type=Path, default=Path("."))
     parser.add_argument("--config", type=Path, default=Path("configs/tus_rec2024.yaml"))
     args = parser.parse_args()
@@ -227,7 +236,9 @@ def main() -> None:
                     float(cfg["voxel_size_mm"]),
                     float(cfg["grid_margin_mm"]),
                 )
-            row, result = run_condition(root, scan, calib, base_ref, grid, cfg, condition, reference_result)
+            row, result = run_condition(
+                root, scan, calib, base_ref, grid, cfg, condition, reference_result
+            )
             scan_rows.append(row)
             all_rows.append(row)
             if condition["name"] == "full_20fps":
@@ -235,7 +246,12 @@ def main() -> None:
                 safe_name = scan.key.replace("/", "__")
                 write_nifti_gz(volumes / f"{safe_name}__full_20fps.nii.gz", result["volume"], grid)
                 plot_trajectory(figures / f"{safe_name}__trajectory.png", base_ref, scan.key)
-                plot_slices(figures / f"{safe_name}__slices.png", result["volume"], result["counts"], scan.key)
+                plot_slices(
+                    figures / f"{safe_name}__slices.png",
+                    result["volume"],
+                    result["counts"],
+                    scan.key,
+                )
         plot_degradation(figures / f"{scan.key.replace('/', '__')}__degradation.png", scan_rows)
 
     metrics = {

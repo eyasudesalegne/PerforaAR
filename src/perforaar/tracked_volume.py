@@ -7,15 +7,15 @@ import math
 import re
 import struct
 import time
+from collections.abc import Iterable
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 import h5py
 import numpy as np
 from scipy import ndimage
 from skimage.metrics import structural_similarity
-
 
 SCAN_RE = re.compile(
     r"^(?P<arm>LH|RH)_(?P<orientation>Par|Per)_(?P<trajectory>C|L|S)_(?P<direction>DtP|PtD)$"
@@ -147,7 +147,8 @@ def make_manifest(root: Path, hash_contents: bool = True) -> dict[str, Any]:
             continue
         if path.name.startswith("."):
             continue
-        if any(part in {".git", "results", "src", "scripts", "tests", "docs", "configs", "data"} for part in path.parts):
+        excluded_dirs = {".git", "results", "src", "scripts", "tests", "docs", "configs", "data"}
+        if any(part in excluded_dirs for part in path.parts):
             continue
         item: dict[str, Any] = {
             "path": path.relative_to(root).as_posix(),
@@ -157,7 +158,10 @@ def make_manifest(root: Path, hash_contents: bool = True) -> dict[str, Any]:
             item.update(hash_file(path))
         files.append(item)
     return {
-        "dataset": "Trackerless 3D Freehand Ultrasound Reconstruction Challenge 2024 - Train Dataset (Part 1)",
+        "dataset": (
+            "Trackerless 3D Freehand Ultrasound Reconstruction Challenge 2024 - "
+            "Train Dataset (Part 1)"
+        ),
         "source": "https://zenodo.org/records/11178509",
         "doi": "10.5281/zenodo.11178509",
         "version": "1.0.0",
@@ -326,7 +330,7 @@ def _random_rotations(
     axes /= np.linalg.norm(axes, axis=1, keepdims=True)
     angles = rng.normal(scale=math.radians(sigma_deg), size=n)
     mats = np.empty((n, 3, 3), dtype=np.float64)
-    for i, (axis, angle) in enumerate(zip(axes, angles)):
+    for i, (axis, angle) in enumerate(zip(axes, angles, strict=True)):
         x, y, z = axis
         c = math.cos(angle)
         s = math.sin(angle)
@@ -382,7 +386,9 @@ def reconstruct_volume(
         n, height, width = frames.shape
         indices = _frame_indices(n, frame_step, dropout_fraction, rng)
         if grid is None:
-            grid = compute_grid(transforms[indices], (height, width), calib, voxel_size_mm, margin_mm)
+            grid = compute_grid(
+                transforms[indices], (height, width), calib, voxel_size_mm, margin_mm
+            )
 
         sums = np.zeros(grid.shape_zyx, dtype=np.float32)
         counts = np.zeros(grid.shape_zyx, dtype=np.uint16)
@@ -400,7 +406,10 @@ def reconstruct_volume(
                 & (ijk[:, 2] < grid.shape_zyx[0])
             )
             vox = ijk[valid]
-            values = np.asarray(frames[frame_idx, ::pixel_stride, ::pixel_stride], dtype=np.float32).ravel()[valid]
+            sampled_frame = np.asarray(
+                frames[frame_idx, ::pixel_stride, ::pixel_stride], dtype=np.float32
+            )
+            values = sampled_frame.ravel()[valid]
             z, y, x = vox[:, 2], vox[:, 1], vox[:, 0]
             np.add.at(sums, (z, y, x), values)
             np.add.at(counts, (z, y, x), 1)
@@ -441,7 +450,19 @@ def write_nifti_gz(path: Path, volume_zyx: np.ndarray, grid: GridSpec) -> None:
     struct.pack_into("<8h", header, 40, 3, nx, ny, nz, 1, 1, 1, 1)
     struct.pack_into("<h", header, 70, 2)
     struct.pack_into("<h", header, 72, 8)
-    struct.pack_into("<8f", header, 76, 0.0, grid.voxel_size_mm, grid.voxel_size_mm, grid.voxel_size_mm, 1, 1, 1, 1)
+    struct.pack_into(
+        "<8f",
+        header,
+        76,
+        0.0,
+        grid.voxel_size_mm,
+        grid.voxel_size_mm,
+        grid.voxel_size_mm,
+        1,
+        1,
+        1,
+        1,
+    )
     struct.pack_into("<f", header, 108, 352.0)
     struct.pack_into("<h", header, 252, 1)
     struct.pack_into("<h", header, 254, 1)
@@ -492,7 +513,7 @@ def pose_point_error_mm(
 ) -> dict[str, float]:
     pts = _pixel_grid(image_shape_hw[0], image_shape_hw[1], pixel_stride)
     errors = []
-    for ref_t, cand_t in zip(reference, candidate):
+    for ref_t, cand_t in zip(reference, candidate, strict=True):
         ref_pts = transform_pixels(ref_t, pts, calib.pixel_to_mm)
         cand_pts = transform_pixels(cand_t, pts, calib.pixel_to_mm)
         errors.append(np.linalg.norm(ref_pts - cand_pts, axis=1))
