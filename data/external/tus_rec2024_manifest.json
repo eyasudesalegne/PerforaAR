@@ -1,6 +1,6 @@
 {
-  "dataset": "Trackerless 3D Freehand Ultrasound Reconstruction Challenge 2024 - Train Dataset (Part 1)",
-  "doi": "10.5281/zenodo.11178509",
+  "dataset": "TUS-REC2024 Validation Dataset",
+  "doi": "10.5281/zenodo.12979481",
   "file_count": 149,
   "files": [
     {
@@ -899,12 +899,17 @@
     }
   ],
   "generated_utc": "2026-09-28T09:52:24Z",
-  "source": "https://zenodo.org/records/11178509",
+  "source": "https://zenodo.org/records/12979481",
   "source_archive": {
-    "bytes": 43400000000,
-    "md5": "7226991c6b04ef85e3cfb6f4e0ea7ad2",
-    "name": "train_part1.zip"
+    "bytes": 4842723858,
+    "md5": "487ebe3241678569296e47efeb2ea325",
+    "name": "Freehand_US_data_val.zip"
   },
+  "subjects": [
+    "050",
+    "051",
+    "052"
+  ],
   "total_bytes": 10676585773,
-  "version": "1.0.0"
+  "version": "2.0.0"
 }

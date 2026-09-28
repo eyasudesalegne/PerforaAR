@@ -94,12 +94,15 @@ The second public-data experiment uses real 2D ultrasound frames, measured probe
 poses, and probe calibration from TUS-REC2024. All 72 frame/transform scan pairs passed
 validation. Six representative scans were reconstructed as NIfTI volumes and evaluated
 under 90 conditions covering frame-rate reduction, dropout, latency, pose noise,
-rotation noise, and calibration perturbation. The worst non-reference NRMSE was `0.0485`
-under `2 mm` translation noise.
+rotation noise, and calibration perturbation. With valid-pixel masking and union-based
+scoring, the worst raw-volume union NRMSE was `0.1267` under `2 mm` translation noise.
 
-The source dataset is intentionally excluded from Git. Download Train Dataset Part 1
-from [Zenodo](https://doi.org/10.5281/zenodo.11178509), extract `frames/`, `transfs/`,
-`landmark/`, `calib_matrix.csv`, and `dataset_keys.h5` into the repository root, then run:
+The source dataset is intentionally excluded from Git. Download the **TUS-REC2024
+Validation Dataset** (subjects 050, 051, and 052) from
+[Zenodo](https://doi.org/10.5281/zenodo.12979481). The source archive is
+`Freehand_US_data_val.zip` (4,842,723,858 bytes; MD5
+`487ebe3241678569296e47efeb2ea325`). Extract `frames/`, `transfs/`, `landmark/`,
+`calib_matrix.csv`, and `dataset_keys.h5` into the repository root, then run:
 
 ```bash
 python -m pip install -e ".[research]"
@@ -108,8 +111,10 @@ python scripts/run_tus_rec2024.py --root . --config configs/tus_rec2024.yaml
 ```
 
 See the [TUS-REC2024 experiment report](docs/experiments/tus-rec2024.md), its
-[machine-readable metrics](results/tus_rec2024/metrics.json), and the committed figures
-and reconstructed volumes in `results/tus_rec2024/`.
+[machine-readable metrics](results/tus_rec2024/metrics.json),
+[landmark evaluation](results/tus_rec2024/landmark_metrics.json), and
+[performance benchmark](results/tus_rec2024/benchmark.json). The committed figures and
+reconstructed volumes are in `results/tus_rec2024/`.
 
 ## Repository map
 

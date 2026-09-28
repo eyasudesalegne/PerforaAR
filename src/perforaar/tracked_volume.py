@@ -1,11 +1,9 @@
 from __future__ import annotations
 
-import gzip
 import hashlib
 import json
 import math
 import re
-import struct
 import time
 from collections.abc import Iterable
 from dataclasses import dataclass
@@ -13,6 +11,7 @@ from pathlib import Path
 from typing import Any
 
 import h5py
+import nibabel as nib
 import numpy as np
 from scipy import ndimage
 from skimage.metrics import structural_similarity
@@ -158,17 +157,15 @@ def make_manifest(root: Path, hash_contents: bool = True) -> dict[str, Any]:
             item.update(hash_file(path))
         files.append(item)
     return {
-        "dataset": (
-            "Trackerless 3D Freehand Ultrasound Reconstruction Challenge 2024 - "
-            "Train Dataset (Part 1)"
-        ),
-        "source": "https://zenodo.org/records/11178509",
-        "doi": "10.5281/zenodo.11178509",
-        "version": "1.0.0",
+        "dataset": "TUS-REC2024 Validation Dataset",
+        "subjects": ["050", "051", "052"],
+        "source": "https://zenodo.org/records/12979481",
+        "doi": "10.5281/zenodo.12979481",
+        "version": "2.0.0",
         "source_archive": {
-            "name": "train_part1.zip",
-            "bytes": 43_400_000_000,
-            "md5": "7226991c6b04ef85e3cfb6f4e0ea7ad2",
+            "name": "Freehand_US_data_val.zip",
+            "bytes": 4_842_723_858,
+            "md5": "487ebe3241678569296e47efeb2ea325",
         },
         "generated_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "file_count": len(files),
@@ -266,6 +263,35 @@ def _pixel_grid(height: int, width: int, stride: int) -> np.ndarray:
     return pts
 
 
+def derive_valid_pixel_mask(
+    frames_file: Path,
+    *,
+    min_nonzero_fraction: float = 0.95,
+    intensity_threshold: int = 0,
+    chunk_size: int = 32,
+) -> np.ndarray:
+    """Estimate the fixed ultrasound field from pixels persistently above background."""
+    if not 0 < min_nonzero_fraction <= 1:
+        raise ValueError("min_nonzero_fraction must be in (0, 1]")
+    with h5py.File(frames_file, "r") as ff:
+        frames = ff["frames"]
+        counts = np.zeros(frames.shape[1:], dtype=np.int64)
+        for start in range(0, frames.shape[0], chunk_size):
+            chunk = np.asarray(frames[start : start + chunk_size])
+            counts += np.count_nonzero(chunk > intensity_threshold, axis=0)
+        mask = counts / frames.shape[0] >= min_nonzero_fraction
+
+    labels, count = ndimage.label(mask)
+    if count:
+        component_sizes = np.bincount(labels.ravel())
+        component_sizes[0] = 0
+        mask = labels == int(np.argmax(component_sizes))
+    mask = ndimage.binary_fill_holes(mask)
+    if not np.any(mask):
+        raise ValueError(f"No valid ultrasound pixels found in {frames_file}")
+    return np.asarray(mask, dtype=bool)
+
+
 def transform_pixels(
     transform: np.ndarray,
     pixel_points: np.ndarray,
@@ -282,14 +308,26 @@ def compute_grid(
     calib: Calibration,
     voxel_size_mm: float,
     margin_mm: float,
+    valid_mask: np.ndarray | None = None,
 ) -> GridSpec:
     height, width = image_shape_hw
+    if valid_mask is not None:
+        if valid_mask.shape != (height, width):
+            raise ValueError("valid_mask shape must match the ultrasound frame")
+        rows, cols = np.nonzero(valid_mask)
+        if not rows.size:
+            raise ValueError("valid_mask contains no valid pixels")
+        row_min, row_max = int(rows.min()), int(rows.max())
+        col_min, col_max = int(cols.min()), int(cols.max())
+    else:
+        row_min, row_max = 0, height - 1
+        col_min, col_max = 0, width - 1
     corners = np.asarray(
         [
-            [0, 0, 0, 1],
-            [width - 1, 0, 0, 1],
-            [0, height - 1, 0, 1],
-            [width - 1, height - 1, 0, 1],
+            [col_min, row_min, 0, 1],
+            [col_max, row_min, 0, 1],
+            [col_min, row_max, 0, 1],
+            [col_max, row_max, 0, 1],
         ],
         dtype=np.float64,
     ).T
@@ -345,6 +383,26 @@ def _random_rotations(
     return mats
 
 
+def perturb_calibration(
+    calibration: Calibration,
+    translation_mm: Iterable[float],
+    rotation_deg_xyz: Iterable[float],
+) -> Calibration:
+    translation = np.asarray(tuple(translation_mm), dtype=np.float64)
+    angles = np.radians(np.asarray(tuple(rotation_deg_xyz), dtype=np.float64))
+    if translation.shape != (3,) or angles.shape != (3,):
+        raise ValueError("Calibration perturbations must contain three values")
+    cx, cy, cz = np.cos(angles)
+    sx, sy, sz = np.sin(angles)
+    rotation_x = np.asarray([[1, 0, 0], [0, cx, -sx], [0, sx, cx]])
+    rotation_y = np.asarray([[cy, 0, sy], [0, 1, 0], [-sy, 0, cy]])
+    rotation_z = np.asarray([[cz, -sz, 0], [sz, cz, 0], [0, 0, 1]])
+    perturbed = calibration.tool_from_image.copy()
+    perturbed[:3, :3] = rotation_z @ rotation_y @ rotation_x @ perturbed[:3, :3]
+    perturbed[:3, 3] += translation
+    return Calibration(calibration.pixel_to_mm.copy(), perturbed)
+
+
 def condition_transforms(
     ref_from_image: np.ndarray,
     *,
@@ -379,20 +437,31 @@ def reconstruct_volume(
     dropout_fraction: float = 0.0,
     seed: int = 13,
     fill_holes_mm: float = 3.0,
+    valid_mask: np.ndarray | None = None,
 ) -> dict[str, Any]:
     rng = np.random.default_rng(seed)
     with h5py.File(frames_file, "r") as ff:
         frames = ff["frames"]
         n, height, width = frames.shape
+        if valid_mask is None:
+            valid_mask = np.ones((height, width), dtype=bool)
+        elif valid_mask.shape != (height, width):
+            raise ValueError("valid_mask shape must match the ultrasound frame")
         indices = _frame_indices(n, frame_step, dropout_fraction, rng)
         if grid is None:
             grid = compute_grid(
-                transforms[indices], (height, width), calib, voxel_size_mm, margin_mm
+                transforms[indices],
+                (height, width),
+                calib,
+                voxel_size_mm,
+                margin_mm,
+                valid_mask,
             )
 
         sums = np.zeros(grid.shape_zyx, dtype=np.float32)
         counts = np.zeros(grid.shape_zyx, dtype=np.uint16)
-        pix = _pixel_grid(height, width, pixel_stride)
+        sampled_mask = valid_mask[::pixel_stride, ::pixel_stride].ravel()
+        pix = _pixel_grid(height, width, pixel_stride)[:, sampled_mask]
 
         for frame_idx in indices:
             coords = transform_pixels(transforms[frame_idx], pix, calib.pixel_to_mm)
@@ -409,7 +478,7 @@ def reconstruct_volume(
             sampled_frame = np.asarray(
                 frames[frame_idx, ::pixel_stride, ::pixel_stride], dtype=np.float32
             )
-            values = sampled_frame.ravel()[valid]
+            values = sampled_frame.ravel()[sampled_mask][valid]
             z, y, x = vox[:, 2], vox[:, 1], vox[:, 0]
             np.add.at(sums, (z, y, x), values)
             np.add.at(counts, (z, y, x), 1)
@@ -418,6 +487,7 @@ def reconstruct_volume(
     covered = counts > 0
     volume[covered] = sums[covered] / counts[covered]
     filled = volume.copy()
+    fill_mask = np.zeros_like(covered)
     filled_voxels = 0
     if fill_holes_mm > 0 and covered.any():
         distances, nearest = ndimage.distance_transform_edt(
@@ -431,6 +501,8 @@ def reconstruct_volume(
         "volume": filled,
         "raw_volume": volume,
         "counts": counts,
+        "raw_mask": covered,
+        "filled_mask": covered | fill_mask,
         "grid": grid,
         "frames_processed": int(len(indices)),
         "pixels_per_frame": int(pix.shape[1]),
@@ -438,73 +510,104 @@ def reconstruct_volume(
         "filled_voxels": filled_voxels,
         "coverage_fraction": float(np.count_nonzero(covered) / counts.size),
         "hole_fraction": float(1.0 - np.count_nonzero(covered) / counts.size),
+        "valid_pixel_fraction": float(np.mean(valid_mask)),
     }
 
 
 def write_nifti_gz(path: Path, volume_zyx: np.ndarray, grid: GridSpec) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     data = np.clip(volume_zyx, 0, 255).astype(np.uint8).transpose(2, 1, 0)
-    nx, ny, nz = data.shape
-    header = bytearray(348)
-    struct.pack_into("<i", header, 0, 348)
-    struct.pack_into("<8h", header, 40, 3, nx, ny, nz, 1, 1, 1, 1)
-    struct.pack_into("<h", header, 70, 2)
-    struct.pack_into("<h", header, 72, 8)
-    struct.pack_into(
-        "<8f",
-        header,
-        76,
-        0.0,
-        grid.voxel_size_mm,
-        grid.voxel_size_mm,
-        grid.voxel_size_mm,
-        1,
-        1,
-        1,
-        1,
-    )
-    struct.pack_into("<f", header, 108, 352.0)
-    struct.pack_into("<h", header, 252, 1)
-    struct.pack_into("<h", header, 254, 1)
-    struct.pack_into("<4f", header, 280, grid.voxel_size_mm, 0, 0, float(grid.origin_mm[0]))
-    struct.pack_into("<4f", header, 296, 0, grid.voxel_size_mm, 0, float(grid.origin_mm[1]))
-    struct.pack_into("<4f", header, 312, 0, 0, grid.voxel_size_mm, float(grid.origin_mm[2]))
-    header[344:348] = b"n+1\0"
-    with gzip.open(path, "wb") as fh:
-        fh.write(header)
-        fh.write(b"\0\0\0\0")
-        fh.write(np.ascontiguousarray(data).tobytes(order="C"))
+    affine = np.eye(4, dtype=np.float64)
+    affine[:3, :3] *= grid.voxel_size_mm
+    affine[:3, 3] = grid.origin_mm
+    image = nib.Nifti1Image(data, affine)
+    image.header.set_xyzt_units("mm")
+    image.set_qform(affine, code=1)
+    image.set_sform(affine, code=1)
+    nib.save(image, path)
 
 
-def compare_volumes(
+def _masked_ssim(
     reference: np.ndarray,
     candidate: np.ndarray,
-    ref_counts: np.ndarray,
-    cand_counts: np.ndarray,
-) -> dict[str, float]:
-    overlap = (ref_counts > 0) & (cand_counts > 0)
-    if not np.any(overlap):
-        return {"overlap_voxels": 0, "nrmse": float("nan"), "ssim_mean": float("nan")}
-    ref = reference[overlap].astype(np.float64)
-    cand = candidate[overlap].astype(np.float64)
-    data_range = max(float(reference.max() - reference.min()), 1.0)
-    nrmse = float(np.sqrt(np.mean((ref - cand) ** 2)) / data_range)
+    mask: np.ndarray,
+    data_range: float,
+) -> float:
+    if not np.any(mask) or min(reference.shape) < 7:
+        return float("nan")
+    _, ssim_map = structural_similarity(
+        reference,
+        candidate,
+        data_range=data_range,
+        full=True,
+    )
+    return float(np.mean(ssim_map[mask]))
 
-    ssims: list[float] = []
-    for axis in range(3):
-        idx = reference.shape[axis] // 2
-        ref_slice = np.take(reference, idx, axis=axis)
-        cand_slice = np.take(candidate, idx, axis=axis)
-        if min(ref_slice.shape) >= 7:
-            ssims.append(float(structural_similarity(ref_slice, cand_slice, data_range=data_range)))
+
+def _comparison_metrics(
+    reference: np.ndarray,
+    candidate: np.ndarray,
+    reference_mask: np.ndarray,
+    candidate_mask: np.ndarray,
+) -> dict[str, float | int]:
+    intersection = reference_mask & candidate_mask
+    union = reference_mask | candidate_mask
+    reference_count = int(np.count_nonzero(reference_mask))
+    candidate_count = int(np.count_nonzero(candidate_mask))
+    intersection_count = int(np.count_nonzero(intersection))
+    union_count = int(np.count_nonzero(union))
+    candidate_only_count = int(np.count_nonzero(candidate_mask & ~reference_mask))
+    ref_values = reference[reference_mask]
+    data_range = max(float(np.ptp(ref_values)) if ref_values.size else 0.0, 1.0)
+
+    def nrmse(mask: np.ndarray) -> float:
+        if not np.any(mask):
+            return float("nan")
+        error = reference[mask].astype(np.float64) - candidate[mask].astype(np.float64)
+        return float(np.sqrt(np.mean(error**2)) / data_range)
+
+    denominator = reference_count + candidate_count
     return {
-        "overlap_voxels": int(np.count_nonzero(overlap)),
-        "nrmse": nrmse,
-        "ssim_mean": float(np.mean(ssims)) if ssims else float("nan"),
+        "occupied_voxels_reference": reference_count,
+        "occupied_voxels_candidate": candidate_count,
+        "occupied_voxels_intersection": intersection_count,
+        "occupied_voxels_union": union_count,
+        "nrmse_union": nrmse(union),
+        "nrmse_intersection": nrmse(intersection),
+        "occupied_volume_dice": (
+            float(2 * intersection_count / denominator) if denominator else 1.0
+        ),
+        "reference_coverage_retained": (
+            float(intersection_count / reference_count) if reference_count else 1.0
+        ),
+        "false_additional_coverage": (
+            float(candidate_only_count / reference_count) if reference_count else 0.0
+        ),
+        "false_additional_voxels": candidate_only_count,
+        "masked_ssim": _masked_ssim(reference, candidate, union, data_range),
     }
 
 
-def pose_point_error_mm(
+def compare_volumes(
+    reference: dict[str, Any],
+    candidate: dict[str, Any],
+) -> dict[str, float | int]:
+    metrics: dict[str, float | int] = {}
+    for prefix, volume_key, mask_key in (
+        ("raw", "raw_volume", "raw_mask"),
+        ("filled", "volume", "filled_mask"),
+    ):
+        values = _comparison_metrics(
+            reference[volume_key],
+            candidate[volume_key],
+            reference[mask_key],
+            candidate[mask_key],
+        )
+        metrics.update({f"{prefix}_{key}": value for key, value in values.items()})
+    return metrics
+
+
+def transform_point_error_mm(
     reference: np.ndarray,
     candidate: np.ndarray,
     image_shape_hw: tuple[int, int],
@@ -512,18 +615,27 @@ def pose_point_error_mm(
     pixel_stride: int = 80,
 ) -> dict[str, float]:
     pts = _pixel_grid(image_shape_hw[0], image_shape_hw[1], pixel_stride)
-    errors = []
+    global_errors = []
     for ref_t, cand_t in zip(reference, candidate, strict=True):
         ref_pts = transform_pixels(ref_t, pts, calib.pixel_to_mm)
         cand_pts = transform_pixels(cand_t, pts, calib.pixel_to_mm)
-        errors.append(np.linalg.norm(ref_pts - cand_pts, axis=1))
-    err = np.concatenate(errors)
-    local = np.asarray([np.mean(e) for e in errors], dtype=np.float64)
+        global_errors.append(np.linalg.norm(ref_pts - cand_pts, axis=1))
+    local_errors = []
+    for index in range(1, len(reference)):
+        ref_local = np.linalg.inv(reference[index - 1]) @ reference[index]
+        candidate_local = np.linalg.inv(candidate[index - 1]) @ candidate[index]
+        ref_pts = transform_pixels(ref_local, pts, calib.pixel_to_mm)
+        candidate_pts = transform_pixels(candidate_local, pts, calib.pixel_to_mm)
+        local_errors.append(np.linalg.norm(ref_pts - candidate_pts, axis=1))
+    global_error = np.concatenate(global_errors)
+    local_error = np.concatenate(local_errors) if local_errors else np.asarray([0.0])
     return {
-        "global_pixel_reconstruction_error_mm_mean": float(np.mean(err)),
-        "global_pixel_reconstruction_error_mm_p95": float(np.percentile(err, 95)),
-        "local_pixel_reconstruction_error_mm_mean": float(np.mean(local)),
-        "local_pixel_reconstruction_error_mm_max": float(np.max(local)),
+        "transform_point_error_global_mm": float(np.mean(global_error)),
+        "transform_point_error_global_mm_p95": float(np.percentile(global_error, 95)),
+        "transform_point_error_global_mm_max": float(np.max(global_error)),
+        "transform_point_error_local_mm": float(np.mean(local_error)),
+        "transform_point_error_local_mm_p95": float(np.percentile(local_error, 95)),
+        "transform_point_error_local_mm_max": float(np.max(local_error)),
     }
 
 
@@ -541,7 +653,7 @@ def trajectory_error(reference: np.ndarray, candidate: np.ndarray) -> dict[str, 
         "translation_error_mm_max": float(np.max(trans)),
         "rotation_error_deg_mean": float(np.mean(rot)),
         "rotation_error_deg_max": float(np.max(rot)),
-        "final_accumulated_drift_mm": float(trans[-1]),
+        "final_position_error_mm": float(trans[-1]),
     }
 
 

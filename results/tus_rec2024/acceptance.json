@@ -1,0 +1,382 @@
+{
+  "checks": [
+    {
+      "name": "validation failures",
+      "observed": 0,
+      "operator": "<=",
+      "passed": true,
+      "threshold": 0
+    },
+    {
+      "name": "050/RH_Per_S_PtD NIfTI units",
+      "observed": "mm",
+      "operator": "==",
+      "passed": true,
+      "threshold": "mm"
+    },
+    {
+      "name": "050/RH_Per_S_PtD qform equals sform",
+      "observed": true,
+      "operator": "==",
+      "passed": true,
+      "threshold": true
+    },
+    {
+      "name": "050/RH_Per_S_PtD affine origin",
+      "observed": [
+        -67.19207763671875,
+        3.6333391666412354,
+        -125.43863677978516
+      ],
+      "operator": "allclose",
+      "passed": true,
+      "threshold": [
+        -67.19207530108248,
+        3.6333391294201274,
+        -125.43863851511617
+      ]
+    },
+    {
+      "name": "050/RH_Per_S_PtD voxel spacing",
+      "observed": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "operator": "allclose",
+      "passed": true,
+      "threshold": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    {
+      "name": "050/RH_Per_S_DtP NIfTI units",
+      "observed": "mm",
+      "operator": "==",
+      "passed": true,
+      "threshold": "mm"
+    },
+    {
+      "name": "050/RH_Per_S_DtP qform equals sform",
+      "observed": true,
+      "operator": "==",
+      "passed": true,
+      "threshold": true
+    },
+    {
+      "name": "050/RH_Per_S_DtP affine origin",
+      "observed": [
+        -2.0,
+        -30.907962799072266,
+        -3.3161916732788086
+      ],
+      "operator": "allclose",
+      "passed": true,
+      "threshold": [
+        -1.9999999999999858,
+        -30.90796241089381,
+        -3.3161915947797116
+      ]
+    },
+    {
+      "name": "050/RH_Per_S_DtP voxel spacing",
+      "observed": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "operator": "allclose",
+      "passed": true,
+      "threshold": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    {
+      "name": "051/LH_Par_C_PtD NIfTI units",
+      "observed": "mm",
+      "operator": "==",
+      "passed": true,
+      "threshold": "mm"
+    },
+    {
+      "name": "051/LH_Par_C_PtD qform equals sform",
+      "observed": true,
+      "operator": "==",
+      "passed": true,
+      "threshold": true
+    },
+    {
+      "name": "051/LH_Par_C_PtD affine origin",
+      "observed": [
+        -147.27395629882812,
+        -1.4390264749526978,
+        -50.20375061035156
+      ],
+      "operator": "allclose",
+      "passed": true,
+      "threshold": [
+        -147.27395735935383,
+        -1.4390265081827227,
+        -50.20374971892177
+      ]
+    },
+    {
+      "name": "051/LH_Par_C_PtD voxel spacing",
+      "observed": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "operator": "allclose",
+      "passed": true,
+      "threshold": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    {
+      "name": "051/LH_Par_C_DtP NIfTI units",
+      "observed": "mm",
+      "operator": "==",
+      "passed": true,
+      "threshold": "mm"
+    },
+    {
+      "name": "051/LH_Par_C_DtP qform equals sform",
+      "observed": true,
+      "operator": "==",
+      "passed": true,
+      "threshold": true
+    },
+    {
+      "name": "051/LH_Par_C_DtP affine origin",
+      "observed": [
+        -2.0,
+        1.092923641204834,
+        -35.28361511230469
+      ],
+      "operator": "allclose",
+      "passed": true,
+      "threshold": [
+        -1.999999999999943,
+        1.0929236788296643,
+        -35.283615941090005
+      ]
+    },
+    {
+      "name": "051/LH_Par_C_DtP voxel spacing",
+      "observed": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "operator": "allclose",
+      "passed": true,
+      "threshold": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    {
+      "name": "052/RH_Par_L_PtD NIfTI units",
+      "observed": "mm",
+      "operator": "==",
+      "passed": true,
+      "threshold": "mm"
+    },
+    {
+      "name": "052/RH_Par_L_PtD qform equals sform",
+      "observed": true,
+      "operator": "==",
+      "passed": true,
+      "threshold": true
+    },
+    {
+      "name": "052/RH_Par_L_PtD affine origin",
+      "observed": [
+        -199.40097045898438,
+        -25.37067222595215,
+        -74.06887817382812
+      ],
+      "operator": "allclose",
+      "passed": true,
+      "threshold": [
+        -199.40096399481448,
+        -25.370671916359857,
+        -74.0688761681892
+      ]
+    },
+    {
+      "name": "052/RH_Par_L_PtD voxel spacing",
+      "observed": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "operator": "allclose",
+      "passed": true,
+      "threshold": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    {
+      "name": "052/RH_Par_L_DtP NIfTI units",
+      "observed": "mm",
+      "operator": "==",
+      "passed": true,
+      "threshold": "mm"
+    },
+    {
+      "name": "052/RH_Par_L_DtP qform equals sform",
+      "observed": true,
+      "operator": "==",
+      "passed": true,
+      "threshold": true
+    },
+    {
+      "name": "052/RH_Par_L_DtP affine origin",
+      "observed": [
+        -2.0,
+        -8.700716018676758,
+        -11.340720176696777
+      ],
+      "operator": "allclose",
+      "passed": true,
+      "threshold": [
+        -2.0000000000000053,
+        -8.7007163757362,
+        -11.340720013631039
+      ]
+    },
+    {
+      "name": "052/RH_Par_L_DtP voxel spacing",
+      "observed": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "operator": "allclose",
+      "passed": true,
+      "threshold": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    {
+      "name": "full_20fps raw union NRMSE",
+      "observed": 0.0,
+      "operator": "<=",
+      "passed": true,
+      "threshold": 1e-06
+    },
+    {
+      "name": "full_20fps landmark transform error",
+      "observed": 0.0,
+      "operator": "<=",
+      "passed": true,
+      "threshold": 1e-06
+    },
+    {
+      "name": "5fps raw union NRMSE",
+      "observed": 0.027668977297201296,
+      "operator": "<=",
+      "passed": true,
+      "threshold": 0.03
+    },
+    {
+      "name": "5fps raw occupied Dice",
+      "observed": 0.991457582478514,
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.985
+    },
+    {
+      "name": "dropout_20pct raw union NRMSE",
+      "observed": 0.01124158926086476,
+      "operator": "<=",
+      "passed": true,
+      "threshold": 0.015
+    },
+    {
+      "name": "dropout_20pct raw occupied Dice",
+      "observed": 0.9983737878696621,
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.995
+    },
+    {
+      "name": "delay_250ms raw union NRMSE",
+      "observed": 0.031161535539762353,
+      "operator": "<=",
+      "passed": true,
+      "threshold": 0.035
+    },
+    {
+      "name": "delay_250ms raw occupied Dice",
+      "observed": 0.9941914032768497,
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.985
+    },
+    {
+      "name": "translation_noise_2mm raw union NRMSE",
+      "observed": 0.12665141466106342,
+      "operator": "<=",
+      "passed": true,
+      "threshold": 0.14
+    },
+    {
+      "name": "translation_noise_2mm raw occupied Dice",
+      "observed": 0.7300982424180461,
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.7
+    },
+    {
+      "name": "rotation_noise_2deg raw union NRMSE",
+      "observed": 0.12365865544432503,
+      "operator": "<=",
+      "passed": true,
+      "threshold": 0.14
+    },
+    {
+      "name": "rotation_noise_2deg raw occupied Dice",
+      "observed": 0.7113764870855385,
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.68
+    },
+    {
+      "name": "calibration_perturbation raw union NRMSE",
+      "observed": 0.05604465851186206,
+      "operator": "<=",
+      "passed": true,
+      "threshold": 0.065
+    },
+    {
+      "name": "calibration_perturbation raw occupied Dice",
+      "observed": 0.969058874086807,
+      "operator": ">=",
+      "passed": true,
+      "threshold": 0.96
+    },
+    {
+      "name": "stride 1 frames per second",
+      "observed": 20.984988651204134,
+      "operator": ">=",
+      "passed": true,
+      "threshold": 15.0
+    }
+  ],
+  "freeze_id": "tus-rec2024-pilot-v2",
+  "passed": true
+}

@@ -1,15 +1,57 @@
 dataset_root: .
 calibration_file: calib_matrix.csv
+experiment_phase: pilot_development
 subjects:
   - "050"
   - "051"
   - "052"
+pilot_subjects:
+  - "050"
+  - "051"
+  - "052"
 locked_validation_subjects: []
+parameters_frozen: true
+parameter_freeze_id: tus-rec2024-pilot-v2
+parameter_freeze_date: "2026-09-28"
 voxel_size_mm: 2.0
 grid_margin_mm: 2.0
 pixel_stride: 8
 fill_holes_mm: 3.0
 seed: 13
+valid_mask:
+  method: persistent_nonblack
+  min_nonzero_fraction: 0.95
+  intensity_threshold: 0
+benchmark:
+  scan: 050/RH_Per_S_PtD
+  pixel_strides: [8, 4, 2, 1]
+acceptance_thresholds:
+  validation_failures_max: 0
+  nifti_spatial_units: mm
+  nifti_qform_sform_equal: true
+  nifti_voxel_spacing_mm: 2.0
+  full_20fps_raw_nrmse_union_max: 0.000001
+  full_20fps_landmark_error_max_mm: 0.000001
+  condition_limits:
+    5fps:
+      raw_nrmse_union_max: 0.030
+      raw_occupied_volume_dice_min: 0.985
+    dropout_20pct:
+      raw_nrmse_union_max: 0.015
+      raw_occupied_volume_dice_min: 0.995
+    delay_250ms:
+      raw_nrmse_union_max: 0.035
+      raw_occupied_volume_dice_min: 0.985
+    translation_noise_2mm:
+      raw_nrmse_union_max: 0.140
+      raw_occupied_volume_dice_min: 0.700
+    rotation_noise_2deg:
+      raw_nrmse_union_max: 0.140
+      raw_occupied_volume_dice_min: 0.680
+    calibration_perturbation:
+      raw_nrmse_union_max: 0.065
+      raw_occupied_volume_dice_min: 0.960
+  benchmark_stride_1_fps_min_reference_workstation: 15.0
 reconstruction_scans:
   - 050/RH_Per_S_PtD
   - 050/RH_Per_S_DtP
@@ -48,3 +90,5 @@ conditions:
     rotation_noise_deg: 2.0
   - name: calibration_perturbation
     calibration_perturbation: true
+    calibration_translation_mm: [1.0, -1.0, 0.5]
+    calibration_rotation_deg_xyz: [0.5, -0.5, 1.0]
