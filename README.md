@@ -12,7 +12,7 @@ The project turns spatially tracked Doppler observations into a fused, ranked ma
 
 Handheld Doppler is useful but produces isolated observations that must be remembered or marked manually. PerforaAR investigates whether tracked sweeps can preserve those observations as a spatial map, combine repeated detections, rank candidates transparently, and relocate the map after repositioning. The benefit is a research hypothesis to be measured against existing practice—not an assumed clinical claim.
 
-## Current public milestone: M0
+## Current public milestone: M0 + THY3 software experiment
 
 - deterministic synthetic Doppler detections;
 - spatial fusion of repeat detections;
@@ -20,6 +20,8 @@ Handheld Doppler is useful but produces isolated observations that must be remem
 - interactive Streamlit planning-map demo;
 - rigid registration and camera-projection geometry;
 - automated tests and GitHub Actions;
+- a reproducible public-data test that re-slices real 3D colour/power Doppler volumes,
+  replays them as virtually tracked 2D frames, and measures 3D reconstruction fidelity;
 - staged phantom, healthy-volunteer, and clinician-usability validation plan.
 
 Real-time Doppler acquisition, learned vessel segmentation, deformable registration, and a surgical AR interface are planned modules and are not represented as complete.
@@ -68,6 +70,24 @@ To run the pipeline without the web interface:
 python scripts/run_demo.py --input data/sample/synthetic_detections.csv --output outputs/ranked_candidates.csv
 ```
 
+To reproduce the Dryad THY3 software-verification experiment:
+
+```bash
+python -m pip install -e ".[research]"
+python scripts/prepare_dryad_cusi.py --archive /path/to/doi_10_5061_dryad_w0vt4b8z8__v20240117.zip
+python scripts/run_dryad_thy3.py
+```
+
+The Dryad volumes are real mouse-brain colour/power Doppler data but are already 3D
+reconstructions. PerforaAR therefore creates virtual tracked slices from them. This
+validates transforms, compounding, sparse-plane interpolation, and frame-dropout
+behavior; it does not replace validation with original tracked frames or a vascular
+phantom. Raw and reconstructed NIfTI files remain outside Git, while the manifest,
+metrics, figures, configuration, and provenance are versioned.
+
+See the [Dryad THY3 experiment report](docs/experiments/dryad-thy3.md) and its
+[machine-readable results](results/dryad_thy3/metrics.json).
+
 ## Repository map
 
 | Path | Purpose |
@@ -75,9 +95,10 @@ python scripts/run_demo.py --input data/sample/synthetic_detections.csv --output
 | `src/perforaar/` | Tested fusion, scoring, geometry, and synthetic-data modules |
 | `app.py` | Interactive research demo |
 | `configs/` | Versioned, human-readable pipeline settings |
-| `data/` | Acquisition/calibration schemas and synthetic sample only |
+| `data/` | Schemas, synthetic samples, and external-data manifests |
 | `docs/` | Scope, architecture, hardware, data governance, and validation plan |
 | `tests/` | Unit tests for quantitative core functions |
+| `results/dryad_thy3/` | Versioned metrics and figures from the public-data test |
 
 ## Evidence and scope
 

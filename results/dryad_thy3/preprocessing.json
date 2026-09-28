@@ -1,0 +1,84 @@
+[
+  {
+    "dataset": "Awake",
+    "source_affine": [
+      [
+        0.02500000037252903,
+        0.0,
+        0.0,
+        -5.699999809265137
+      ],
+      [
+        0.0,
+        0.02500000037252903,
+        0.0,
+        -7.824999809265137
+      ],
+      [
+        0.0,
+        0.0,
+        0.02500000037252903,
+        -2.825000047683716
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_header_pixdim_raw": [
+      3.9999998989515007e-05,
+      3.9999998989515007e-05,
+      3.9999998989515007e-05
+    ],
+    "source_units": "unknown",
+    "applied_spacing_mm": 0.04,
+    "operations": [
+      "validated paired shape and finite values",
+      "preserved original float32 voxel values",
+      "replaced ambiguous spatial metadata with documented 0.04 mm isotropic spacing"
+    ]
+  },
+  {
+    "dataset": "Anesthetized",
+    "source_affine": [
+      [
+        0.02500000037252903,
+        0.0,
+        0.0,
+        -5.699999809265137
+      ],
+      [
+        0.0,
+        0.02500000037252903,
+        0.0,
+        -7.824999809265137
+      ],
+      [
+        0.0,
+        0.0,
+        0.02500000037252903,
+        -2.825000047683716
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_header_pixdim_raw": [
+      3.9999998989515007e-05,
+      3.9999998989515007e-05,
+      3.9999998989515007e-05
+    ],
+    "source_units": "unknown",
+    "applied_spacing_mm": 0.04,
+    "operations": [
+      "validated paired shape and finite values",
+      "preserved original float32 voxel values",
+      "replaced ambiguous spatial metadata with documented 0.04 mm isotropic spacing"
+    ]
+  }
+]

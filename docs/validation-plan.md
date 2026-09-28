@@ -6,6 +6,13 @@ This plan prevents technical feasibility, usability, and clinical effectiveness 
 
 Use synthetic transforms and known clusters to verify units, coordinate direction, fusion behavior, ranking calculations, invalid-input rejection, and projection. Continuous integration must pass on supported Python versions.
 
+The Dryad THY3 experiment extends this stage with real colour/power Doppler signal
+content. Because the public dataset contains completed 3D volumes rather than original
+tracked frames, it is re-sliced into virtual 2D frames with known poses. Exact-plane,
+sparse-plane, and frame-dropout conditions verify reconstruction software behavior.
+These results remain Stage 0 evidence and must not be presented as phantom accuracy,
+human feasibility, or clinical validation.
+
 ## Stage 1 — benchtop calibration
 
 Use a calibrated grid and tracked probe mount.

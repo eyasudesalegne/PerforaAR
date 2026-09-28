@@ -10,9 +10,19 @@ from .geometry import (
     transform_points,
 )
 from .ranking import rank_candidates
+from .reconstruction import (
+    CompoundedVolume,
+    TrackedDopplerFrame,
+    VolumeGrid,
+    compound_tracked_frames,
+)
 
 __all__ = [
     "fuse_detections",
+    "CompoundedVolume",
+    "TrackedDopplerFrame",
+    "VolumeGrid",
+    "compound_tracked_frames",
     "image_to_leg_transform",
     "invert_rigid_transform",
     "linear_probe_pixels_to_points",

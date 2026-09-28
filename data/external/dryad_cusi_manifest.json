@@ -1,0 +1,40 @@
+{
+  "dataset": "Four-Dimensional Computational Ultrasound Imaging of Brain Hemodynamics",
+  "doi": "10.5061/dryad.w0vt4b8z8",
+  "version_date": "2024-01-17",
+  "license": "CC0 1.0",
+  "archive_name": "doi_10_5061_dryad_w0vt4b8z8__v20240117.zip",
+  "archive_sha256_observed": "b0bc87cff566bd99e418595dad925f8ae39585d5212cd14ae8d514453a78223f",
+  "files": [
+    {
+      "dryad_file_id": 2819406,
+      "path": "Awake_Color_Doppler.nii",
+      "bytes": 19768672,
+      "sha256": "a05ee2a4845fa23dfafb7c2753e1fae937e65d4820ca41768eaed122650923cf"
+    },
+    {
+      "dryad_file_id": 2819407,
+      "path": "Awake_Power_Doppler.nii",
+      "bytes": 19768672,
+      "sha256": "4cf21f24e0dc1a1fe84c803aaea8310523abf71fca775711e91e8c5684adce05"
+    },
+    {
+      "dryad_file_id": 2819408,
+      "path": "Anesthetized_Color_Doppler.nii",
+      "bytes": 36864352,
+      "sha256": "a92e68efdbd2e269be1d8b2c2fff2c42d02a2b26af21ea2ab421dc2b586e8cd3"
+    },
+    {
+      "dryad_file_id": 2819409,
+      "path": "Anesthetized_Power_Doppler.nii",
+      "bytes": 36864352,
+      "sha256": "e15358484bde7e750236478d2d6050079e0b9e7c50537d9a6df02e1323e1bdb6"
+    },
+    {
+      "dryad_file_id": 2819411,
+      "path": "README.md",
+      "bytes": 1659,
+      "sha256": "60fe84e65e4fb5a132c45e0b2c53ab67ed91390dbdd76a4a0df9cccca36418af"
+    }
+  ]
+}

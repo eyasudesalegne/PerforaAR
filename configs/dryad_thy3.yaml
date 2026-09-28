@@ -1,0 +1,22 @@
+dataset:
+  doi: 10.5061/dryad.w0vt4b8z8
+  voxel_spacing_mm: 0.04
+  power_mask_percentile: 99.0
+
+virtual_acquisition:
+  sweep_axis: 1
+  sparse_step_voxels: 4
+  dropout_fraction: 0.20
+  random_seed: 20260924
+
+evaluation:
+  surface_tolerance_voxels: 2.0
+  minimum_velocity_magnitude_m_s: 0.0001
+  acceptance:
+    exact_coverage_fraction_min: 0.999999
+    exact_power_mae_db_max: 1.0e-7
+    exact_velocity_mae_m_s_max: 1.0e-9
+    sparse_dice_min: 0.80
+    sparse_surface_dice_min: 0.85
+    sparse_velocity_sign_agreement_min: 0.90
+    dropout_dice_loss_max: 0.20

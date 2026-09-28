@@ -4,3 +4,6 @@ Copyright 2026 Eyasu Desalegne Beyene and PerforaAR contributors
 This product is licensed under the Apache License, Version 2.0.
 It is a research prototype and is not approved for clinical use.
 
+The optional Dryad THY3 experiment uses "Four-Dimensional Computational Ultrasound
+Imaging of Brain Hemodynamics," DOI 10.5061/dryad.w0vt4b8z8, released under CC0 1.0.
+The source data are not part of the PerforaAR software distribution.

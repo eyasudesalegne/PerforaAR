@@ -1,0 +1,30 @@
+name: Dryad THY3 experiment
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reconstruct:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -e ".[research]"
+      - name: Download and verify Dryad dataset
+        run: python scripts/prepare_dryad_cusi.py
+      - name: Run virtual tracked-sweep experiment
+        run: python scripts/run_dryad_thy3.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dryad-thy3-results
+          path: |
+            results/dryad_thy3
+          if-no-files-found: warn
