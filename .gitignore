@@ -11,6 +11,17 @@ data/raw/
 *.dcm
 *.nii
 *.nii.gz
+!results/tus_rec2024/volumes/*.nii.gz
 *.mp4
 .DS_Store
 
+# TUS-REC2024 source dataset (downloaded separately)
+frames/
+transfs/
+landmark/
+*.h5
+calib_matrix.csv
+*.zip
+*.tar
+*.tar.gz
+*.7z

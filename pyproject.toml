@@ -24,8 +24,10 @@ demo = [
   "streamlit>=1.35,<2",
 ]
 research = [
+  "h5py>=3.10,<4",
   "matplotlib>=3.8,<4",
   "nibabel>=5.2,<6",
+  "scikit-image>=0.22,<1",
   "scipy>=1.11,<2",
 ]
 dev = [

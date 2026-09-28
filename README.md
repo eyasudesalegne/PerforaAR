@@ -88,6 +88,29 @@ metrics, figures, configuration, and provenance are versioned.
 See the [Dryad THY3 experiment report](docs/experiments/dryad-thy3.md) and its
 [machine-readable results](results/dryad_thy3/metrics.json).
 
+## TUS-REC2024 tracked reconstruction experiment
+
+The second public-data experiment uses real 2D ultrasound frames, measured probe
+poses, and probe calibration from TUS-REC2024. All 72 frame/transform scan pairs passed
+validation. Six representative scans were reconstructed as NIfTI volumes and evaluated
+under 90 conditions covering frame-rate reduction, dropout, latency, pose noise,
+rotation noise, and calibration perturbation. The worst non-reference NRMSE was `0.0485`
+under `2 mm` translation noise.
+
+The source dataset is intentionally excluded from Git. Download Train Dataset Part 1
+from [Zenodo](https://doi.org/10.5281/zenodo.11178509), extract `frames/`, `transfs/`,
+`landmark/`, `calib_matrix.csv`, and `dataset_keys.h5` into the repository root, then run:
+
+```bash
+python -m pip install -e ".[research]"
+python scripts/prepare_tus_rec2024.py --root .
+python scripts/run_tus_rec2024.py --root . --config configs/tus_rec2024.yaml
+```
+
+See the [TUS-REC2024 experiment report](docs/experiments/tus-rec2024.md), its
+[machine-readable metrics](results/tus_rec2024/metrics.json), and the committed figures
+and reconstructed volumes in `results/tus_rec2024/`.
+
 ## Repository map
 
 | Path | Purpose |
@@ -99,6 +122,7 @@ See the [Dryad THY3 experiment report](docs/experiments/dryad-thy3.md) and its
 | `docs/` | Scope, architecture, hardware, data governance, and validation plan |
 | `tests/` | Unit tests for quantitative core functions |
 | `results/dryad_thy3/` | Versioned metrics and figures from the public-data test |
+| `results/tus_rec2024/` | Tracked reconstruction metrics, figures, and NIfTI volumes |
 
 ## Evidence and scope
 

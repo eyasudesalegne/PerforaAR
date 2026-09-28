@@ -1,0 +1,50 @@
+dataset_root: .
+calibration_file: calib_matrix.csv
+subjects:
+  - "050"
+  - "051"
+  - "052"
+locked_validation_subjects: []
+voxel_size_mm: 2.0
+grid_margin_mm: 2.0
+pixel_stride: 8
+fill_holes_mm: 3.0
+seed: 13
+reconstruction_scans:
+  - 050/RH_Per_S_PtD
+  - 050/RH_Per_S_DtP
+  - 051/LH_Par_C_PtD
+  - 051/LH_Par_C_DtP
+  - 052/RH_Par_L_PtD
+  - 052/RH_Par_L_DtP
+conditions:
+  - name: full_20fps
+    frame_step: 1
+  - name: 10fps
+    frame_step: 2
+  - name: 5fps
+    frame_step: 4
+  - name: dropout_10pct
+    dropout_fraction: 0.10
+  - name: dropout_20pct
+    dropout_fraction: 0.20
+  - name: delay_50ms
+    pose_delay_frames: 1
+  - name: delay_150ms
+    pose_delay_frames: 3
+  - name: delay_250ms
+    pose_delay_frames: 5
+  - name: translation_noise_0p5mm
+    translation_noise_mm: 0.5
+  - name: translation_noise_1mm
+    translation_noise_mm: 1.0
+  - name: translation_noise_2mm
+    translation_noise_mm: 2.0
+  - name: rotation_noise_0p5deg
+    rotation_noise_deg: 0.5
+  - name: rotation_noise_1deg
+    rotation_noise_deg: 1.0
+  - name: rotation_noise_2deg
+    rotation_noise_deg: 2.0
+  - name: calibration_perturbation
+    calibration_perturbation: true

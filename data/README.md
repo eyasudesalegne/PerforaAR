@@ -10,6 +10,8 @@ Only synthetic, de-identified, or explicitly redistributable data may be committ
 - `schema/calibration.schema.json` defines versioned transform and residual records.
 - `external/dryad_cusi_manifest.json` pins the public Dryad dataset version, file IDs,
   sizes, license, and SHA-256 digests used by the THY3 experiment.
+- `external/tus_rec2024_manifest.json` records the TUS-REC2024 dataset version, expected
+  paths, file sizes, and content hashes used by the tracked reconstruction experiment.
 - `private/` and `raw/` are ignored and must never be pushed.
 
 The Dryad input is acquired into `raw/dryad_cusi/` with
@@ -17,5 +19,9 @@ The Dryad input is acquired into `raw/dryad_cusi/` with
 archive and generated NIfTI volumes are intentionally kept out of Git; the public DOI,
 verified manifest, derived metrics, figures, and provenance are sufficient to reproduce
 the run without bloating the repository.
+
+TUS-REC2024 input is extracted into the repository-root `frames/`, `transfs/`, and
+`landmark/` directories. Those directories and their calibration/key files are ignored;
+only the manifest and derived experiment outputs are versioned.
 
 The project does not currently distribute ultrasound video, CTA/MRA, participant measurements, or intraoperative data. Future datasets require ethics approval where applicable, participant consent or a lawful basis, de-identification, a data dictionary, provenance, and a written redistribution decision.

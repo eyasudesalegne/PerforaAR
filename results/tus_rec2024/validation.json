@@ -1,0 +1,2090 @@
+[
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      447,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.282785128106724,
+    "rotation_delta_deg_mean": 0.08346743601693889,
+    "rotation_determinant_max": 1.0000000706049141,
+    "rotation_determinant_min": 0.9999999278301797,
+    "rotation_orthonormal_error_max": 9.185093626472437e-08,
+    "scan": "LH_Par_C_DtP",
+    "subject": "050",
+    "tforms_shape": [
+      447,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 1.1383695095146809,
+    "translation_delta_mm_mean": 0.36435760721502813
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      485,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.33468296158301775,
+    "rotation_delta_deg_mean": 0.06652848637605902,
+    "rotation_determinant_max": 1.0000000779167162,
+    "rotation_determinant_min": 0.9999999279378432,
+    "rotation_orthonormal_error_max": 9.312160437662947e-08,
+    "scan": "LH_Par_C_PtD",
+    "subject": "050",
+    "tforms_shape": [
+      485,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 1.5017781741560985,
+    "translation_delta_mm_mean": 0.3143939701318061
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      354,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.21451010990948782,
+    "rotation_delta_deg_mean": 0.06205294701268075,
+    "rotation_determinant_max": 1.0000000827887412,
+    "rotation_determinant_min": 0.9999999313848721,
+    "rotation_orthonormal_error_max": 9.577169535529981e-08,
+    "scan": "LH_Par_L_DtP",
+    "subject": "050",
+    "tforms_shape": [
+      354,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 0.6874077930934219,
+    "translation_delta_mm_mean": 0.32444853279787145
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      411,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.21621840273020276,
+    "rotation_delta_deg_mean": 0.07047862534710289,
+    "rotation_determinant_max": 1.0000000786261654,
+    "rotation_determinant_min": 0.9999999290028277,
+    "rotation_orthonormal_error_max": 1.0235697546506656e-07,
+    "scan": "LH_Par_L_PtD",
+    "subject": "050",
+    "tforms_shape": [
+      411,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 0.7429416710550034,
+    "translation_delta_mm_mean": 0.32768409040052576
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      436,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.2042679726056137,
+    "rotation_delta_deg_mean": 0.07890217131829518,
+    "rotation_determinant_max": 1.0000000769788913,
+    "rotation_determinant_min": 0.9999999281514578,
+    "rotation_orthonormal_error_max": 9.608405126483234e-08,
+    "scan": "LH_Par_S_DtP",
+    "subject": "050",
+    "tforms_shape": [
+      436,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 0.9483466560553103,
+    "translation_delta_mm_mean": 0.3873565801475829
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      562,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.27548447564021405,
+    "rotation_delta_deg_mean": 0.08224499817459117,
+    "rotation_determinant_max": 1.000000081184117,
+    "rotation_determinant_min": 0.9999999182052391,
+    "rotation_orthonormal_error_max": 9.482566306961606e-08,
+    "scan": "LH_Par_S_PtD",
+    "subject": "050",
+    "tforms_shape": [
+      562,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 1.0629468103674058,
+    "translation_delta_mm_mean": 0.32688298527013754
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      546,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.27786278202860987,
+    "rotation_delta_deg_mean": 0.06151958423327064,
+    "rotation_determinant_max": 1.0000000832132514,
+    "rotation_determinant_min": 0.9999999135807882,
+    "rotation_orthonormal_error_max": 1.2282701171456642e-07,
+    "scan": "LH_Per_C_DtP",
+    "subject": "050",
+    "tforms_shape": [
+      546,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 0.8912511781655004,
+    "translation_delta_mm_mean": 0.3125294152300279
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      455,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.22945989494070798,
+    "rotation_delta_deg_mean": 0.06658575959919369,
+    "rotation_determinant_max": 1.0000000731327,
+    "rotation_determinant_min": 0.9999999275209195,
+    "rotation_orthonormal_error_max": 1.1172775396445203e-07,
+    "scan": "LH_Per_C_PtD",
+    "subject": "050",
+    "tforms_shape": [
+      455,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 0.9351672130156875,
+    "translation_delta_mm_mean": 0.35799311730320355
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      463,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.21673508323969493,
+    "rotation_delta_deg_mean": 0.055346157647271445,
+    "rotation_determinant_max": 1.000000070757071,
+    "rotation_determinant_min": 0.9999999291264501,
+    "rotation_orthonormal_error_max": 1.1270404753356708e-07,
+    "scan": "LH_Per_L_DtP",
+    "subject": "050",
+    "tforms_shape": [
+      463,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 0.803576727427887,
+    "translation_delta_mm_mean": 0.30220367565108924
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      430,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.17513123160601496,
+    "rotation_delta_deg_mean": 0.05672628969370223,
+    "rotation_determinant_max": 1.0000000813290781,
+    "rotation_determinant_min": 0.9999999174398543,
+    "rotation_orthonormal_error_max": 1.0737250312781758e-07,
+    "scan": "LH_Per_L_PtD",
+    "subject": "050",
+    "tforms_shape": [
+      430,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 0.8973991851094177,
+    "translation_delta_mm_mean": 0.3711887876403185
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      458,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.28902368169038434,
+    "rotation_delta_deg_mean": 0.07740734330553964,
+    "rotation_determinant_max": 1.0000000808840264,
+    "rotation_determinant_min": 0.9999999249501021,
+    "rotation_orthonormal_error_max": 1.048001429392155e-07,
+    "scan": "LH_Per_S_DtP",
+    "subject": "050",
+    "tforms_shape": [
+      458,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 0.8830676735805767,
+    "translation_delta_mm_mean": 0.36793325438780766
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      534,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.20199143931875707,
+    "rotation_delta_deg_mean": 0.06720210134704739,
+    "rotation_determinant_max": 1.0000000920432002,
+    "rotation_determinant_min": 0.9999999115159598,
+    "rotation_orthonormal_error_max": 1.4297867568515408e-07,
+    "scan": "LH_Per_S_PtD",
+    "subject": "050",
+    "tforms_shape": [
+      534,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 0.9056855546605593,
+    "translation_delta_mm_mean": 0.3594989535002113
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      548,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.27720325521680417,
+    "rotation_delta_deg_mean": 0.07849148182885168,
+    "rotation_determinant_max": 1.0000000793293224,
+    "rotation_determinant_min": 0.9999999158383415,
+    "rotation_orthonormal_error_max": 9.766677982618282e-08,
+    "scan": "RH_Par_C_DtP",
+    "subject": "050",
+    "tforms_shape": [
+      548,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 1.1293336297556198,
+    "translation_delta_mm_mean": 0.3418769830708864
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      475,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.26813329043654804,
+    "rotation_delta_deg_mean": 0.06647013222265699,
+    "rotation_determinant_max": 1.0000000807800937,
+    "rotation_determinant_min": 0.9999999235797862,
+    "rotation_orthonormal_error_max": 1.1443515303148521e-07,
+    "scan": "RH_Par_C_PtD",
+    "subject": "050",
+    "tforms_shape": [
+      475,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 0.782875551167076,
+    "translation_delta_mm_mean": 0.3072590237944589
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      459,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.20269126743498878,
+    "rotation_delta_deg_mean": 0.05867824710333078,
+    "rotation_determinant_max": 1.0000000778382032,
+    "rotation_determinant_min": 0.9999999256867418,
+    "rotation_orthonormal_error_max": 1.0008426822085305e-07,
+    "scan": "RH_Par_L_DtP",
+    "subject": "050",
+    "tforms_shape": [
+      459,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 0.7149131949237139,
+    "translation_delta_mm_mean": 0.3274199513071847
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      492,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.17807222984603926,
+    "rotation_delta_deg_mean": 0.05320329162258219,
+    "rotation_determinant_max": 1.0000000818448735,
+    "rotation_determinant_min": 0.9999999232737675,
+    "rotation_orthonormal_error_max": 9.896762513487625e-08,
+    "scan": "RH_Par_L_PtD",
+    "subject": "050",
+    "tforms_shape": [
+      492,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 0.7566594722351595,
+    "translation_delta_mm_mean": 0.3143566068031292
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      508,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.2797000974146618,
+    "rotation_delta_deg_mean": 0.0756988960159778,
+    "rotation_determinant_max": 1.0000000760604102,
+    "rotation_determinant_min": 0.9999999234537119,
+    "rotation_orthonormal_error_max": 9.279173413248903e-08,
+    "scan": "RH_Par_S_DtP",
+    "subject": "050",
+    "tforms_shape": [
+      508,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 1.160401080450116,
+    "translation_delta_mm_mean": 0.36560017391886185
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      501,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.21382654231265763,
+    "rotation_delta_deg_mean": 0.06449939602170551,
+    "rotation_determinant_max": 1.0000000731863927,
+    "rotation_determinant_min": 0.9999999235422897,
+    "rotation_orthonormal_error_max": 9.396270517189125e-08,
+    "scan": "RH_Par_S_PtD",
+    "subject": "050",
+    "tforms_shape": [
+      501,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 0.7325500075992561,
+    "translation_delta_mm_mean": 0.33648154545594333
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      423,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.3110813071759051,
+    "rotation_delta_deg_mean": 0.10364365834756097,
+    "rotation_determinant_max": 1.0000000675033107,
+    "rotation_determinant_min": 0.999999928511704,
+    "rotation_orthonormal_error_max": 1.0397048832035377e-07,
+    "scan": "RH_Per_C_DtP",
+    "subject": "050",
+    "tforms_shape": [
+      423,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 0.9066213040425817,
+    "translation_delta_mm_mean": 0.3858868952759458
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      520,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.3870949382724988,
+    "rotation_delta_deg_mean": 0.07306835168258273,
+    "rotation_determinant_max": 1.000000064938934,
+    "rotation_determinant_min": 0.9999999336709353,
+    "rotation_orthonormal_error_max": 1.0449478898312352e-07,
+    "scan": "RH_Per_C_PtD",
+    "subject": "050",
+    "tforms_shape": [
+      520,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 0.8104020689686071,
+    "translation_delta_mm_mean": 0.3080262552533607
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      425,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.1540697440274542,
+    "rotation_delta_deg_mean": 0.057290418302228564,
+    "rotation_determinant_max": 1.0000000737962005,
+    "rotation_determinant_min": 0.9999999259815815,
+    "rotation_orthonormal_error_max": 1.1017613362890858e-07,
+    "scan": "RH_Per_L_DtP",
+    "subject": "050",
+    "tforms_shape": [
+      425,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 0.7564560768760598,
+    "translation_delta_mm_mean": 0.338876182557118
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      450,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.17784223810393007,
+    "rotation_delta_deg_mean": 0.05781198416072841,
+    "rotation_determinant_max": 1.0000000779259646,
+    "rotation_determinant_min": 0.9999999159104809,
+    "rotation_orthonormal_error_max": 1.1183673993966428e-07,
+    "scan": "RH_Per_L_PtD",
+    "subject": "050",
+    "tforms_shape": [
+      450,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 1.011610675744133,
+    "translation_delta_mm_mean": 0.3165744653236407
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      606,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.29780386751105387,
+    "rotation_delta_deg_mean": 0.081785144490796,
+    "rotation_determinant_max": 1.0000000848627866,
+    "rotation_determinant_min": 0.9999999147197393,
+    "rotation_orthonormal_error_max": 1.0945205857378702e-07,
+    "scan": "RH_Per_S_DtP",
+    "subject": "050",
+    "tforms_shape": [
+      606,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 1.0322076337211314,
+    "translation_delta_mm_mean": 0.35870597467087184
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      451,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.27225568951743917,
+    "rotation_delta_deg_mean": 0.07579545846166182,
+    "rotation_determinant_max": 1.0000000722417444,
+    "rotation_determinant_min": 0.9999999250866823,
+    "rotation_orthonormal_error_max": 1.0024167486949401e-07,
+    "scan": "RH_Per_S_PtD",
+    "subject": "050",
+    "tforms_shape": [
+      451,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 0.9767442699874634,
+    "translation_delta_mm_mean": 0.4168569043303918
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      454,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.7100387067895854,
+    "rotation_delta_deg_mean": 0.07569661719387766,
+    "rotation_determinant_max": 1.0000000790314978,
+    "rotation_determinant_min": 0.9999999307909628,
+    "rotation_orthonormal_error_max": 1.0538549812038672e-07,
+    "scan": "LH_Par_C_DtP",
+    "subject": "051",
+    "tforms_shape": [
+      454,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 1.4172183288044018,
+    "translation_delta_mm_mean": 0.3750117246985972
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      515,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.38506954352401995,
+    "rotation_delta_deg_mean": 0.07447344294382574,
+    "rotation_determinant_max": 1.000000079538267,
+    "rotation_determinant_min": 0.999999918497173,
+    "rotation_orthonormal_error_max": 9.645265076120667e-08,
+    "scan": "LH_Par_C_PtD",
+    "subject": "051",
+    "tforms_shape": [
+      515,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 1.2076321265075862,
+    "translation_delta_mm_mean": 0.3538043027415685
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      431,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.19565397212493024,
+    "rotation_delta_deg_mean": 0.05870790274089791,
+    "rotation_determinant_max": 1.0000000724286797,
+    "rotation_determinant_min": 0.9999999209720164,
+    "rotation_orthonormal_error_max": 9.707911075391279e-08,
+    "scan": "LH_Par_L_DtP",
+    "subject": "051",
+    "tforms_shape": [
+      431,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 1.0118518712815545,
+    "translation_delta_mm_mean": 0.36004175982680775
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      450,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.19538441603399573,
+    "rotation_delta_deg_mean": 0.06247253839054744,
+    "rotation_determinant_max": 1.0000000756538094,
+    "rotation_determinant_min": 0.9999999257253623,
+    "rotation_orthonormal_error_max": 9.9109413967818e-08,
+    "scan": "LH_Par_L_PtD",
+    "subject": "051",
+    "tforms_shape": [
+      450,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 1.0032435723969522,
+    "translation_delta_mm_mean": 0.33813716521637854
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      523,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.34233317224344073,
+    "rotation_delta_deg_mean": 0.062041900168309204,
+    "rotation_determinant_max": 1.0000000740305248,
+    "rotation_determinant_min": 0.9999999263137119,
+    "rotation_orthonormal_error_max": 9.749292952765235e-08,
+    "scan": "LH_Par_S_DtP",
+    "subject": "051",
+    "tforms_shape": [
+      523,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 1.0053264484455606,
+    "translation_delta_mm_mean": 0.3617850431452278
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      578,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.22677360198405247,
+    "rotation_delta_deg_mean": 0.06525619938651987,
+    "rotation_determinant_max": 1.0000000776451354,
+    "rotation_determinant_min": 0.9999999176494927,
+    "rotation_orthonormal_error_max": 9.767456058736123e-08,
+    "scan": "LH_Par_S_PtD",
+    "subject": "051",
+    "tforms_shape": [
+      578,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 0.8086009864969942,
+    "translation_delta_mm_mean": 0.3111082174792995
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      434,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.3037495162033364,
+    "rotation_delta_deg_mean": 0.06237844209419772,
+    "rotation_determinant_max": 1.0000000729513185,
+    "rotation_determinant_min": 0.999999926348684,
+    "rotation_orthonormal_error_max": 1.0509118939656972e-07,
+    "scan": "LH_Per_C_DtP",
+    "subject": "051",
+    "tforms_shape": [
+      434,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 1.0060301212542042,
+    "translation_delta_mm_mean": 0.3870468271539795
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      527,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.2336201428230853,
+    "rotation_delta_deg_mean": 0.061929717822529214,
+    "rotation_determinant_max": 1.0000000844006838,
+    "rotation_determinant_min": 0.9999999131980565,
+    "rotation_orthonormal_error_max": 1.131498227621314e-07,
+    "scan": "LH_Per_C_PtD",
+    "subject": "051",
+    "tforms_shape": [
+      527,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 0.7558523831368318,
+    "translation_delta_mm_mean": 0.3582321578088846
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      318,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.2259613063716539,
+    "rotation_delta_deg_mean": 0.05634646766966238,
+    "rotation_determinant_max": 1.0000000796300135,
+    "rotation_determinant_min": 0.9999999172167766,
+    "rotation_orthonormal_error_max": 1.1018254262236113e-07,
+    "scan": "LH_Per_L_DtP",
+    "subject": "051",
+    "tforms_shape": [
+      318,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 0.8223482426295171,
+    "translation_delta_mm_mean": 0.4616303696574897
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      374,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.15744870305799835,
+    "rotation_delta_deg_mean": 0.06096195496830719,
+    "rotation_determinant_max": 1.0000000908918922,
+    "rotation_determinant_min": 0.9999999212008083,
+    "rotation_orthonormal_error_max": 1.3732757020488523e-07,
+    "scan": "LH_Per_L_PtD",
+    "subject": "051",
+    "tforms_shape": [
+      374,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 0.9481317724292676,
+    "translation_delta_mm_mean": 0.3967289067728003
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      572,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.2952513632475791,
+    "rotation_delta_deg_mean": 0.06709682071575727,
+    "rotation_determinant_max": 1.0000000817593733,
+    "rotation_determinant_min": 0.999999918382174,
+    "rotation_orthonormal_error_max": 1.084927188948361e-07,
+    "scan": "LH_Per_S_DtP",
+    "subject": "051",
+    "tforms_shape": [
+      572,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 0.8286203585513104,
+    "translation_delta_mm_mean": 0.3537606441843603
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      581,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.21190566694281326,
+    "rotation_delta_deg_mean": 0.06394649405345276,
+    "rotation_determinant_max": 1.000000078145096,
+    "rotation_determinant_min": 0.999999872149921,
+    "rotation_orthonormal_error_max": 1.5421997972369237e-07,
+    "scan": "LH_Per_S_PtD",
+    "subject": "051",
+    "tforms_shape": [
+      581,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 0.7801055497260421,
+    "translation_delta_mm_mean": 0.33338985401319815
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      442,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.2553293060059158,
+    "rotation_delta_deg_mean": 0.08001057389194863,
+    "rotation_determinant_max": 1.0000000763937733,
+    "rotation_determinant_min": 0.9999999261499574,
+    "rotation_orthonormal_error_max": 9.561955002381008e-08,
+    "scan": "RH_Par_C_DtP",
+    "subject": "051",
+    "tforms_shape": [
+      442,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 1.01202816873444,
+    "translation_delta_mm_mean": 0.4116132573019624
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      469,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.1866614922764419,
+    "rotation_delta_deg_mean": 0.07055661811959885,
+    "rotation_determinant_max": 1.0000000712671984,
+    "rotation_determinant_min": 0.999999917770688,
+    "rotation_orthonormal_error_max": 9.56395554654251e-08,
+    "scan": "RH_Par_C_PtD",
+    "subject": "051",
+    "tforms_shape": [
+      469,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 0.7481157191360647,
+    "translation_delta_mm_mean": 0.33857503658865
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      350,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.17068696751516133,
+    "rotation_delta_deg_mean": 0.06725914029228729,
+    "rotation_determinant_max": 1.000000072155652,
+    "rotation_determinant_min": 0.9999999338582731,
+    "rotation_orthonormal_error_max": 9.788773066823726e-08,
+    "scan": "RH_Par_L_DtP",
+    "subject": "051",
+    "tforms_shape": [
+      350,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 0.9177833234155509,
+    "translation_delta_mm_mean": 0.41371060650158353
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      450,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.1752913191338352,
+    "rotation_delta_deg_mean": 0.05850304504933038,
+    "rotation_determinant_max": 1.0000000782827247,
+    "rotation_determinant_min": 0.999999920829956,
+    "rotation_orthonormal_error_max": 9.274776559524101e-08,
+    "scan": "RH_Par_L_PtD",
+    "subject": "051",
+    "tforms_shape": [
+      450,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 0.8292002424021068,
+    "translation_delta_mm_mean": 0.3733112702699254
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      483,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.4391956582735334,
+    "rotation_delta_deg_mean": 0.08936087322716994,
+    "rotation_determinant_max": 1.0000000701135268,
+    "rotation_determinant_min": 0.9999999246348951,
+    "rotation_orthonormal_error_max": 9.539510184981839e-08,
+    "scan": "RH_Par_S_DtP",
+    "subject": "051",
+    "tforms_shape": [
+      483,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 1.343119353257443,
+    "translation_delta_mm_mean": 0.3993772881264114
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      536,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.2554975492166348,
+    "rotation_delta_deg_mean": 0.06864568022076355,
+    "rotation_determinant_max": 1.00000007782759,
+    "rotation_determinant_min": 0.9999999257895202,
+    "rotation_orthonormal_error_max": 9.205597397347365e-08,
+    "scan": "RH_Par_S_PtD",
+    "subject": "051",
+    "tforms_shape": [
+      536,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 0.9521893780492614,
+    "translation_delta_mm_mean": 0.3738434588941106
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      425,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.3240807267884804,
+    "rotation_delta_deg_mean": 0.0831390132357691,
+    "rotation_determinant_max": 1.0000000795779571,
+    "rotation_determinant_min": 0.9999999282187991,
+    "rotation_orthonormal_error_max": 1.1801517262774021e-07,
+    "scan": "RH_Per_C_DtP",
+    "subject": "051",
+    "tforms_shape": [
+      425,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 1.0366539120378382,
+    "translation_delta_mm_mean": 0.3962769613629181
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      462,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.4113329570191802,
+    "rotation_delta_deg_mean": 0.07380301504662798,
+    "rotation_determinant_max": 1.0000000794348778,
+    "rotation_determinant_min": 0.999999922180974,
+    "rotation_orthonormal_error_max": 1.1447952781752299e-07,
+    "scan": "RH_Per_C_PtD",
+    "subject": "051",
+    "tforms_shape": [
+      462,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 1.0302531965595705,
+    "translation_delta_mm_mean": 0.39020292523492406
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      365,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.17222794586356976,
+    "rotation_delta_deg_mean": 0.05757586949372563,
+    "rotation_determinant_max": 1.000000078511782,
+    "rotation_determinant_min": 0.9999999088302526,
+    "rotation_orthonormal_error_max": 1.0925133713435595e-07,
+    "scan": "RH_Per_L_DtP",
+    "subject": "051",
+    "tforms_shape": [
+      365,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 0.8803254691957563,
+    "translation_delta_mm_mean": 0.35389778490884327
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      508,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.1839294157462756,
+    "rotation_delta_deg_mean": 0.06078741995781084,
+    "rotation_determinant_max": 1.0000000779950469,
+    "rotation_determinant_min": 0.9999999197755228,
+    "rotation_orthonormal_error_max": 1.0762137309038482e-07,
+    "scan": "RH_Per_L_PtD",
+    "subject": "051",
+    "tforms_shape": [
+      508,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 1.0102713761727995,
+    "translation_delta_mm_mean": 0.2854288912087872
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      466,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.2707548923902962,
+    "rotation_delta_deg_mean": 0.08768763014572682,
+    "rotation_determinant_max": 1.0000000846761463,
+    "rotation_determinant_min": 0.9999999231730153,
+    "rotation_orthonormal_error_max": 1.1408594598474157e-07,
+    "scan": "RH_Per_S_DtP",
+    "subject": "051",
+    "tforms_shape": [
+      466,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 0.9706931642871833,
+    "translation_delta_mm_mean": 0.42906116637530806
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      533,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.24129373652045194,
+    "rotation_delta_deg_mean": 0.07557940479057812,
+    "rotation_determinant_max": 1.0000000713696544,
+    "rotation_determinant_min": 0.9999999181156194,
+    "rotation_orthonormal_error_max": 1.119566459939758e-07,
+    "scan": "RH_Per_S_PtD",
+    "subject": "051",
+    "tforms_shape": [
+      533,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 1.1020156932566065,
+    "translation_delta_mm_mean": 0.3701485243775791
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      479,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.20369175043170082,
+    "rotation_delta_deg_mean": 0.06699464465171565,
+    "rotation_determinant_max": 1.0000000830133193,
+    "rotation_determinant_min": 0.9999999258669315,
+    "rotation_orthonormal_error_max": 9.936080513275342e-08,
+    "scan": "LH_Par_C_DtP",
+    "subject": "052",
+    "tforms_shape": [
+      479,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 0.7444198359450815,
+    "translation_delta_mm_mean": 0.4081671738406654
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      483,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.30992504899303186,
+    "rotation_delta_deg_mean": 0.07546871223819515,
+    "rotation_determinant_max": 1.0000000824142172,
+    "rotation_determinant_min": 0.9999999344016729,
+    "rotation_orthonormal_error_max": 9.581116297860541e-08,
+    "scan": "LH_Par_C_PtD",
+    "subject": "052",
+    "tforms_shape": [
+      483,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 0.8491289617687264,
+    "translation_delta_mm_mean": 0.39319047259972234
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      390,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.14417993461870388,
+    "rotation_delta_deg_mean": 0.05672474343126696,
+    "rotation_determinant_max": 1.0000000793906176,
+    "rotation_determinant_min": 0.9999999178021443,
+    "rotation_orthonormal_error_max": 9.516780429586636e-08,
+    "scan": "LH_Par_L_DtP",
+    "subject": "052",
+    "tforms_shape": [
+      390,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 1.189942596301569,
+    "translation_delta_mm_mean": 0.44414590975263074
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      425,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.2280238666107165,
+    "rotation_delta_deg_mean": 0.07106047612732219,
+    "rotation_determinant_max": 1.0000000760254757,
+    "rotation_determinant_min": 0.9999999265376036,
+    "rotation_orthonormal_error_max": 9.589007704715218e-08,
+    "scan": "LH_Par_L_PtD",
+    "subject": "052",
+    "tforms_shape": [
+      425,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 1.0778592087322543,
+    "translation_delta_mm_mean": 0.4033117952527137
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      512,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.23253056732242572,
+    "rotation_delta_deg_mean": 0.07036140526556522,
+    "rotation_determinant_max": 1.000000073839861,
+    "rotation_determinant_min": 0.9999999353454264,
+    "rotation_orthonormal_error_max": 9.185686693343431e-08,
+    "scan": "LH_Par_S_DtP",
+    "subject": "052",
+    "tforms_shape": [
+      512,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 0.8079586206486454,
+    "translation_delta_mm_mean": 0.38598044913382656
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      475,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.18782192530637878,
+    "rotation_delta_deg_mean": 0.07042166253544288,
+    "rotation_determinant_max": 1.0000000792805117,
+    "rotation_determinant_min": 0.9999999219747434,
+    "rotation_orthonormal_error_max": 1.2550786212108811e-07,
+    "scan": "LH_Par_S_PtD",
+    "subject": "052",
+    "tforms_shape": [
+      475,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 0.9361403226495253,
+    "translation_delta_mm_mean": 0.381853876366839
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      576,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.34707162776411743,
+    "rotation_delta_deg_mean": 0.06320680106846682,
+    "rotation_determinant_max": 1.00000007452148,
+    "rotation_determinant_min": 0.9999999032331953,
+    "rotation_orthonormal_error_max": 1.1531020890710593e-07,
+    "scan": "LH_Per_C_DtP",
+    "subject": "052",
+    "tforms_shape": [
+      576,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 0.7769859502764845,
+    "translation_delta_mm_mean": 0.34546430884290774
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      437,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.2448802937602273,
+    "rotation_delta_deg_mean": 0.06379121940176645,
+    "rotation_determinant_max": 1.0000000834217366,
+    "rotation_determinant_min": 0.9999999230607393,
+    "rotation_orthonormal_error_max": 1.2453487385293882e-07,
+    "scan": "LH_Per_C_PtD",
+    "subject": "052",
+    "tforms_shape": [
+      437,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 1.3987474686099124,
+    "translation_delta_mm_mean": 0.4500470137487612
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      468,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.14124168546685986,
+    "rotation_delta_deg_mean": 0.05050394970786491,
+    "rotation_determinant_max": 1.0000000804549105,
+    "rotation_determinant_min": 0.999999920597776,
+    "rotation_orthonormal_error_max": 1.1097138171090479e-07,
+    "scan": "LH_Per_L_DtP",
+    "subject": "052",
+    "tforms_shape": [
+      468,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 0.7458619141109976,
+    "translation_delta_mm_mean": 0.3752772658586317
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      475,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.21923600582633251,
+    "rotation_delta_deg_mean": 0.061131943131744415,
+    "rotation_determinant_max": 1.000000080985176,
+    "rotation_determinant_min": 0.9999999132891282,
+    "rotation_orthonormal_error_max": 1.1317359071252404e-07,
+    "scan": "LH_Per_L_PtD",
+    "subject": "052",
+    "tforms_shape": [
+      475,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 0.888146231960706,
+    "translation_delta_mm_mean": 0.4162789508666526
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      601,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.22443845195688886,
+    "rotation_delta_deg_mean": 0.06422509833339243,
+    "rotation_determinant_max": 1.0000000868657033,
+    "rotation_determinant_min": 0.999999914481292,
+    "rotation_orthonormal_error_max": 1.1437057940671749e-07,
+    "scan": "LH_Per_S_DtP",
+    "subject": "052",
+    "tforms_shape": [
+      601,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 0.995056855505013,
+    "translation_delta_mm_mean": 0.35675669219124206
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "left",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      422,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.20599023387474447,
+    "rotation_delta_deg_mean": 0.058671068879316404,
+    "rotation_determinant_max": 1.0000000914538836,
+    "rotation_determinant_min": 0.9999999173026187,
+    "rotation_orthonormal_error_max": 1.0789277535295295e-07,
+    "scan": "LH_Per_S_PtD",
+    "subject": "052",
+    "tforms_shape": [
+      422,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 1.0924364722166935,
+    "translation_delta_mm_mean": 0.4422207156334023
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      469,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.3142641175571843,
+    "rotation_delta_deg_mean": 0.07407317631948743,
+    "rotation_determinant_max": 1.0000000735058774,
+    "rotation_determinant_min": 0.9999999259293,
+    "rotation_orthonormal_error_max": 1.019866873073507e-07,
+    "scan": "RH_Par_C_DtP",
+    "subject": "052",
+    "tforms_shape": [
+      469,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 0.9713048082990601,
+    "translation_delta_mm_mean": 0.40226349307768466
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      569,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.2534504602339231,
+    "rotation_delta_deg_mean": 0.06316754424444304,
+    "rotation_determinant_max": 1.000000074968962,
+    "rotation_determinant_min": 0.9999999297106721,
+    "rotation_orthonormal_error_max": 1.0669633135999988e-07,
+    "scan": "RH_Par_C_PtD",
+    "subject": "052",
+    "tforms_shape": [
+      569,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 0.8829107364559651,
+    "translation_delta_mm_mean": 0.3520665176352866
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      442,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.17956469566973643,
+    "rotation_delta_deg_mean": 0.05639409849139831,
+    "rotation_determinant_max": 1.0000000652418122,
+    "rotation_determinant_min": 0.9999999275299022,
+    "rotation_orthonormal_error_max": 1.0022843099929028e-07,
+    "scan": "RH_Par_L_DtP",
+    "subject": "052",
+    "tforms_shape": [
+      442,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 0.8055442894153382,
+    "translation_delta_mm_mean": 0.39098572921051233
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      527,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.2240189884340833,
+    "rotation_delta_deg_mean": 0.05708504316512221,
+    "rotation_determinant_max": 1.0000000746476414,
+    "rotation_determinant_min": 0.9999999318139656,
+    "rotation_orthonormal_error_max": 1.0379732755580406e-07,
+    "scan": "RH_Par_L_PtD",
+    "subject": "052",
+    "tforms_shape": [
+      527,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 1.0261971654385784,
+    "translation_delta_mm_mean": 0.37442925026442936
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      539,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.3197151063998004,
+    "rotation_delta_deg_mean": 0.07231919690601027,
+    "rotation_determinant_max": 1.0000000689842306,
+    "rotation_determinant_min": 0.9999999160173406,
+    "rotation_orthonormal_error_max": 1.0136460669290955e-07,
+    "scan": "RH_Par_S_DtP",
+    "subject": "052",
+    "tforms_shape": [
+      539,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 0.9414481646421591,
+    "translation_delta_mm_mean": 0.4117472031419295
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      559,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "parallel",
+    "problems": [],
+    "rotation_delta_deg_max": 0.16688640192622303,
+    "rotation_delta_deg_mean": 0.056961618066616766,
+    "rotation_determinant_max": 1.0000000791565673,
+    "rotation_determinant_min": 0.9999999243685842,
+    "rotation_orthonormal_error_max": 9.567258023251495e-08,
+    "scan": "RH_Par_S_PtD",
+    "subject": "052",
+    "tforms_shape": [
+      559,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 1.1912104840768218,
+    "translation_delta_mm_mean": 0.3436510894077165
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      431,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.6162290451234069,
+    "rotation_delta_deg_mean": 0.08036732072964974,
+    "rotation_determinant_max": 1.0000000883492104,
+    "rotation_determinant_min": 0.999999913308491,
+    "rotation_orthonormal_error_max": 1.1443996797973614e-07,
+    "scan": "RH_Per_C_DtP",
+    "subject": "052",
+    "tforms_shape": [
+      431,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 1.8235341693063976,
+    "translation_delta_mm_mean": 0.44679013501983234
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      584,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.19733628235457013,
+    "rotation_delta_deg_mean": 0.06052459093575846,
+    "rotation_determinant_max": 1.000000092548583,
+    "rotation_determinant_min": 0.9999999209295105,
+    "rotation_orthonormal_error_max": 1.1017425920720593e-07,
+    "scan": "RH_Per_C_PtD",
+    "subject": "052",
+    "tforms_shape": [
+      584,
+      4,
+      4
+    ],
+    "trajectory": "C-shaped",
+    "translation_delta_mm_max": 0.740851798758816,
+    "translation_delta_mm_mean": 0.3623549172401408
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      511,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.21626598508018155,
+    "rotation_delta_deg_mean": 0.061341843521353925,
+    "rotation_determinant_max": 1.0000000700837677,
+    "rotation_determinant_min": 0.9999999240116615,
+    "rotation_orthonormal_error_max": 1.0419348968990096e-07,
+    "scan": "RH_Per_L_DtP",
+    "subject": "052",
+    "tforms_shape": [
+      511,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 0.7925407588593157,
+    "translation_delta_mm_mean": 0.37206084373457676
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      547,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.23134745243341492,
+    "rotation_delta_deg_mean": 0.057420930283965534,
+    "rotation_determinant_max": 1.0000000807366602,
+    "rotation_determinant_min": 0.9999999295044655,
+    "rotation_orthonormal_error_max": 9.896226340373014e-08,
+    "scan": "RH_Per_L_PtD",
+    "subject": "052",
+    "tforms_shape": [
+      547,
+      4,
+      4
+    ],
+    "trajectory": "linear",
+    "translation_delta_mm_max": 0.9926785246742222,
+    "translation_delta_mm_mean": 0.3461726270123046
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "distal-to-proximal",
+    "frames_shape": [
+      554,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.3512444375085468,
+    "rotation_delta_deg_mean": 0.07311523080016316,
+    "rotation_determinant_max": 1.0000000754571656,
+    "rotation_determinant_min": 0.9999999269604976,
+    "rotation_orthonormal_error_max": 1.1988763194975097e-07,
+    "scan": "RH_Per_S_DtP",
+    "subject": "052",
+    "tforms_shape": [
+      554,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 0.890682994542212,
+    "translation_delta_mm_mean": 0.4184982857112293
+  },
+  {
+    "adjacent_duplicate_frame_samples": 0,
+    "arm": "right",
+    "blank_frames": 0,
+    "direction": "proximal-to-distal",
+    "frames_shape": [
+      586,
+      480,
+      640
+    ],
+    "passed": true,
+    "probe_orientation": "perpendicular",
+    "problems": [],
+    "rotation_delta_deg_max": 0.24747067904308634,
+    "rotation_delta_deg_mean": 0.06913748543606875,
+    "rotation_determinant_max": 1.000000066436291,
+    "rotation_determinant_min": 0.9999999154056745,
+    "rotation_orthonormal_error_max": 1.0697573750667044e-07,
+    "scan": "RH_Per_S_PtD",
+    "subject": "052",
+    "tforms_shape": [
+      586,
+      4,
+      4
+    ],
+    "trajectory": "S-shaped",
+    "translation_delta_mm_max": 0.8347213740424154,
+    "translation_delta_mm_mean": 0.3747793965479298
+  }
+]
