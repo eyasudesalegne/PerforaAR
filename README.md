@@ -116,6 +116,23 @@ See the [TUS-REC2024 experiment report](docs/experiments/tus-rec2024.md), its
 [performance benchmark](results/tus_rec2024/benchmark.json). The committed figures and
 reconstructed volumes are in `results/tus_rec2024/`.
 
+### Inspect the 3D reconstruction
+
+The Streamlit application now includes an interactive **3D Reconstruction** page with
+physical-coordinate volume rendering, orthogonal slices, acquisition QA, and GLB plus
+coordinate-metadata export for a future Unity/OpenXR glasses client:
+
+```bash
+python -m pip install -e ".[demo]"
+streamlit run app.py
+```
+
+The committed TUS-REC2024 results are grayscale B-mode anatomy, not colour-Doppler vessel
+maps. They can validate the viewer and AR data contract, but a surgical vessel overlay
+still requires tracked colour-Doppler acquisition, vessel segmentation, and
+participant-specific registration. See the [3D viewer and AR scene contract](docs/ar-viewer.md)
+and the [pre-generated 3D assets](results/tus_rec2024/ar_exports/).
+
 ## Repository map
 
 | Path | Purpose |

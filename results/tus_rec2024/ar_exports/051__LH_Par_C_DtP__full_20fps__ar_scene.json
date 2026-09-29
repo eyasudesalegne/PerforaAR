@@ -1,0 +1,56 @@
+{
+  "clinical_status": "research prototype; not validated for patient guidance",
+  "coordinate_convention": "NIfTI physical coordinates; right-handed x/y/z in millimetres",
+  "marching_cubes_step_size": 2,
+  "mesh_face_count": 8062,
+  "mesh_vertex_count": 4082,
+  "physical_extent_mm": [
+    290.0,
+    110.0,
+    42.0
+  ],
+  "registration_required": true,
+  "registration_target": "participant-specific leg reference frame",
+  "schema": "perforaar.ar-scene.v1",
+  "smoothing_sigma_voxels": 1.0,
+  "source_volume": "051__LH_Par_C_DtP__full_20fps.nii.gz",
+  "spatial_unit": "mm",
+  "surface_threshold": 15.0,
+  "threshold_percentile_nonzero": 35.0,
+  "voxel_shape_xyz": [
+    146,
+    56,
+    22
+  ],
+  "voxel_spacing_mm": [
+    2.0,
+    2.0,
+    2.0
+  ],
+  "voxel_to_physical_affine": [
+    [
+      2.0,
+      0.0,
+      0.0,
+      -2.0
+    ],
+    [
+      0.0,
+      2.0,
+      0.0,
+      1.092923641204834
+    ],
+    [
+      0.0,
+      0.0,
+      2.0,
+      -35.28361511230469
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ]
+}
