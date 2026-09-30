@@ -133,6 +133,18 @@ still requires tracked colour-Doppler acquisition, vessel segmentation, and
 participant-specific registration. See the [3D viewer and AR scene contract](docs/ar-viewer.md)
 and the [pre-generated 3D assets](results/tus_rec2024/ar_exports/).
 
+### Turkish technical report
+
+The illustrated Turkish report consolidates the software architecture, Dryad and
+TUS-REC2024 experiments, all committed reconstruction diagnostics, the six 3D surface
+variants, and the AR scene contract. Generate it with:
+
+```bash
+python scripts/generate_turkish_report.py
+```
+
+The PDF is written to `output/pdf/PerforaAR_Teknik_Raporu_TR.pdf`.
+
 ## Repository map
 
 | Path | Purpose |

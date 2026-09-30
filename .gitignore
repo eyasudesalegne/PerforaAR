@@ -6,6 +6,7 @@ __pycache__/
 .ruff_cache/
 .streamlit/secrets.toml
 outputs/
+output/pdf/*.pdf
 data/private/
 data/raw/
 *.dcm
